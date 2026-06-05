@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INDRA — Post-Quantum Blockchain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Georgia&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:      #080808;
+    --surface:    #1A1610;
+    --card:       #15120A;
+    --border:     #2A2418;
+    --faint:      #302A20;
+    --gold:       #E8A820;
+    --gold-light: #FFE878;
+    --gold-dark:  #B87808;
+    --gold-dim:   #8A5C10;
+    --text:       #F5F0E8;
+    --muted:      #7A7060;
+    --green:      #5ABA5A;
+    --red:        #DA5A5A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: rgba(8,8,8,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 0.875rem;
+    text-decoration: none;
+  }
+  .nav-bolt {
+    width: 18px; height: 36px;
+  }
+  .nav-wordmark {
+    font-family: 'Georgia', Georgia, serif;
+    font-size: 1.125rem;
+    letter-spacing: 0.25em;
+    color: var(--text);
+    font-weight: normal;
+  }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--black) !important;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 4px;
+    font-weight: 600 !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(232,168,32,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-logo {
+    width: 60px; height: 120px; margin-bottom: 2.5rem;
+    position: relative; z-index: 1;
+  }
+  .hero-wordmark {
+    font-family: 'Georgia', Georgia, serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: 0.4em;
+    color: var(--text);
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+    position: relative; z-index: 1;
+  }
+  .hero-sub-wordmark {
+    font-size: 0.6875rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    position: relative; z-index: 1;
+  }
+  .hero-divider {
+    width: 120px; height: 0.5px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    margin: 0 auto 2.5rem;
+    position: relative; z-index: 1;
+  }
+  .hero-desc {
+    max-width: 520px;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    position: relative; z-index: 1;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    position: relative; z-index: 1;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    padding: 0.875rem 2.5rem;
+    border-radius: 4px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+    border: 0.5px solid var(--gold-dark);
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--gold);
+    padding: 0.875rem 2.5rem;
+    border-radius: 4px;
+    border: 0.5px solid var(--gold-dim);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: border-color 0.2s, transform 0.1s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--gold); transform: translateY(-1px); }
+
+  /* LIVE TICKER */
+  .ticker {
+    background: var(--surface);
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    padding: 1rem 2.5rem;
+    display: flex; gap: 3rem; overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .ticker::-webkit-scrollbar { display: none; }
+  .ticker-item { display: flex; flex-direction: column; gap: 0.25rem; white-space: nowrap; }
+  .ticker-label {
+    font-size: 0.5625rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold-dim); font-family: monospace;
+  }
+  .ticker-val { font-family: monospace; font-size: 0.9375rem; color: var(--gold); font-weight: 600; }
+  .ticker-val.live { color: var(--green); }
+  .ticker-divider { width: 0.5px; background: var(--border); flex-shrink: 0; }
+
+  /* SECTION */
+  section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold-dim); font-family: monospace;
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 0.5px; background: var(--faint);
+  }
+  h2 {
+    font-family: 'Georgia', Georgia, serif;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  .section-sub { color: var(--muted); font-size: 0.9375rem; max-width: 480px; margin-bottom: 3rem; line-height: 1.7; }
+
+  /* FEATURES */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.5px;
+    background: var(--border);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .feature-card {
+    background: var(--card);
+    padding: 1.75rem;
+    transition: background 0.2s;
+  }
+  .feature-card:hover { background: var(--surface); }
+  .feature-num {
+    font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim);
+    letter-spacing: 0.15em; margin-bottom: 1rem;
+  }
+  .feature-title { font-size: 0.9375rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text); }
+  .feature-desc { font-size: 0.8125rem; color: var(--muted); line-height: 1.65; }
+
+  /* EXPLORER */
+  .explorer-wrap {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .explorer-topbar {
+    background: var(--surface);
+    padding: 0.875rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 0.5px solid var(--border);
+    flex-wrap: wrap; gap: 0.75rem;
+  }
+  .explorer-topbar-title {
+    font-family: monospace; font-size: 0.6875rem; color: var(--muted); letter-spacing: 0.08em;
+  }
+  .live-pill {
+    display: flex; align-items: center; gap: 0.375rem;
+    font-family: monospace; font-size: 0.5625rem; letter-spacing: 0.1em;
+    color: var(--green); text-transform: uppercase;
+    background: rgba(90,186,90,0.08);
+    border: 0.5px solid rgba(90,186,90,0.2);
+    padding: 0.25rem 0.625rem; border-radius: 2px;
+  }
+  .live-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .chain-stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    border-bottom: 0.5px solid var(--border);
+  }
+  .cs-item {
+    padding: 1rem 1.25rem;
+    border-right: 0.5px solid var(--border);
+  }
+  .cs-item:last-child { border-right: none; }
+  .cs-label { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.375rem; }
+  .cs-val { font-family: monospace; font-size: 1rem; font-weight: 600; color: var(--gold); }
+  .cs-val.normal { color: var(--text); }
+
+  .tab-bar {
+    display: flex; border-bottom: 0.5px solid var(--border);
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    background: none; border: none; color: var(--muted);
+    padding: 0.75rem 1.5rem; font-family: monospace; font-size: 0.6875rem;
+    cursor: pointer; border-bottom: 1px solid transparent;
+    transition: all 0.2s; white-space: nowrap; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+  .tab-btn:hover:not(.active) { color: var(--text); }
+  .tab-content { display: none; padding: 1.5rem; }
+  .tab-content.active { display: block; }
+
+  table { width: 100%; border-collapse: collapse; font-family: monospace; font-size: 0.6875rem; }
+  th { color: var(--gold-dim); text-align: left; padding: 0.5rem 0.75rem; border-bottom: 0.5px solid var(--border); text-transform: uppercase; letter-spacing: 0.1em; }
+  td { padding: 0.625rem 0.75rem; border-bottom: 0.5px solid var(--faint); color: var(--text); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--surface); }
+  .hash-cell { color: var(--gold); font-size: 0.625rem; }
+  .v-badge {
+    display: inline-block; padding: 0.125rem 0.5rem; border-radius: 2px;
+    font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .v-buddhi { background: rgba(232,168,32,0.12); color: var(--gold); border: 0.5px solid rgba(232,168,32,0.2); }
+  .v-siddhi { background: rgba(90,186,90,0.12); color: var(--green); border: 0.5px solid rgba(90,186,90,0.2); }
+  .v-kushal  { background: rgba(100,160,220,0.12); color: #78AADC; border: 0.5px solid rgba(100,160,220,0.2); }
+  .v-bonkai  { background: rgba(218,90,90,0.12); color: var(--red); border: 0.5px solid rgba(218,90,90,0.2); }
+
+  /* LOOKUP */
+  .lookup-row { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .lookup-input {
+    flex: 1; min-width: 200px;
+    background: var(--surface); border: 0.5px solid var(--border);
+    color: var(--text); padding: 0.75rem 1rem;
+    font-family: monospace; font-size: 0.6875rem; border-radius: 4px; outline: none;
+    transition: border-color 0.2s;
+  }
+  .lookup-input:focus { border-color: var(--gold-dim); }
+  .lookup-input::placeholder { color: var(--muted); }
+  .lookup-go {
+    background: var(--gold); color: var(--black); border: none;
+    padding: 0.75rem 1.5rem; font-family: monospace; font-size: 0.6875rem;
+    font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    border-radius: 4px; cursor: pointer; transition: background 0.2s;
+  }
+  .lookup-go:hover { background: var(--gold-light); }
+  .lookup-result {
+    background: var(--surface); border: 0.5px solid var(--border);
+    padding: 1.25rem; border-radius: 4px; display: none;
+  }
+  .lookup-result.show { display: block; }
+  .lr-label { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; }
+  .lr-val { font-family: monospace; color: var(--text); margin-bottom: 1rem; font-size: 0.8125rem; word-break: break-all; }
+  .lr-val.big { font-size: 1.5rem; color: var(--gold); font-weight: 600; margin-bottom: 0.25rem; }
+  .addr-shortcuts { display: flex; flex-direction: column; gap: 0.375rem; margin-top: 1.25rem; }
+  .addr-row {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.5rem 0.75rem; background: var(--surface); border: 0.5px solid var(--border);
+    border-radius: 4px; cursor: pointer; transition: border-color 0.2s;
+  }
+  .addr-row:hover { border-color: var(--gold-dim); }
+  .addr-hex { font-family: monospace; font-size: 0.5625rem; color: var(--muted); word-break: break-all; }
+  .lookup-err { font-family: monospace; font-size: 0.6875rem; color: var(--red); margin-top: 0.5rem; }
+
+  /* VALIDATORS */
+  .validators-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem;
+  }
+  .val-card {
+    background: var(--card); border: 0.5px solid var(--border); border-radius: 6px;
+    padding: 1.25rem; transition: border-color 0.2s;
+  }
+  .val-card:hover { border-color: var(--gold-dim); }
+  .val-name { font-family: 'Georgia', Georgia, serif; font-size: 1.25rem; margin-bottom: 0.375rem; }
+  .val-id { font-family: monospace; font-size: 0.5rem; color: var(--muted); margin-bottom: 1rem; word-break: break-all; line-height: 1.6; }
+  .val-row { display: flex; justify-content: space-between; align-items: center; padding: 0.375rem 0; border-top: 0.5px solid var(--faint); }
+  .val-row-label { font-size: 0.6875rem; color: var(--muted); }
+  .val-row-val { font-family: monospace; font-size: 0.6875rem; font-weight: 600; }
+  .status-active { color: var(--green); }
+
+  /* INSTALL */
+  .install-box { background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 2rem; }
+  .install-titlebar {
+    background: var(--surface); padding: 0.625rem 1rem;
+    display: flex; align-items: center; gap: 0.5rem; border-bottom: 0.5px solid var(--border);
+  }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .install-body { padding: 1.5rem; font-family: monospace; font-size: 0.75rem; line-height: 2; overflow-x: auto; }
+  .c { color: var(--muted); }
+  .cmd { color: var(--gold); }
+  .flag { color: #78AADC; }
+  .val { color: var(--green); }
+  .copy-btn {
+    margin-left: auto; background: transparent; border: 0.5px solid var(--border);
+    color: var(--muted); padding: 0.25rem 0.75rem; border-radius: 2px;
+    font-family: monospace; font-size: 0.5625rem; cursor: pointer; letter-spacing: 0.08em;
+    text-transform: uppercase; transition: all 0.2s;
+  }
+  .copy-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5px; background: var(--border); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 2rem; }
+  .info-item { background: var(--card); padding: 1.25rem; }
+  .info-label { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.375rem; }
+  .info-val { font-family: monospace; font-size: 0.8125rem; color: var(--text); word-break: break-all; }
+  .info-val a { color: var(--gold); text-decoration: none; }
+  .info-val a:hover { color: var(--gold-light); }
+
+  /* WALLET */
+  .wallet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 2rem; }
+  .wallet-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; padding: 1.5rem; }
+  .wallet-icon { font-size: 1.5rem; margin-bottom: 0.875rem; }
+  .wallet-title { font-size: 0.9375rem; font-weight: 600; margin-bottom: 0.375rem; }
+  .wallet-desc { font-size: 0.8125rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
+  .pill {
+    display: inline-block; font-family: monospace; font-size: 0.5625rem;
+    padding: 0.25rem 0.625rem; border-radius: 2px; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .pill-gold { background: rgba(232,168,32,0.1); color: var(--gold); border: 0.5px solid rgba(232,168,32,0.2); }
+  .pill-green { background: rgba(90,186,90,0.1); color: var(--green); border: 0.5px solid rgba(90,186,90,0.2); }
+
+  /* FOOTER */
+  footer {
+    border-top: 0.5px solid var(--border);
+    background: var(--surface);
+    padding: 2rem 2.5rem;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 0.75rem; }
+  .footer-wordmark { font-family: 'Georgia', Georgia, serif; font-size: 1rem; letter-spacing: 0.25em; color: var(--text); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.08em; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-family: monospace; font-size: 0.5625rem; color: var(--muted); letter-spacing: 0.1em; }
+
+  .loading { font-family: monospace; font-size: 0.6875rem; color: var(--muted); padding: 1rem 0; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">
+    <svg class="nav-bolt" viewBox="0 0 72 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="42,3 22,3 6,62 26,62 25,57 56,8" fill="#E8A820"/>
+      <polygon points="26,62 10,127 58,68 36,68 34,62" fill="#B87808"/>
+    </svg>
+    <span class="nav-wordmark">I N D R A</span>
+  </a>
+  <div class="nav-links">
+    <a href="#explorer">Explorer</a>
+    <a href="#validators">Validators</a>
+    <a href="#docs">Run a Node</a>
+    <a href="#wallet">Wallet</a>
+    <a href="https://github.com/jyothisarath096/indra" target="_blank" class="nav-cta">GitHub</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <svg class="hero-logo" viewBox="0 0 72 130" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="44,3 24,3 8,62 28,62 27,57 58,8" fill="#FFE878" opacity="0.4"/>
+    <polygon points="28,62 12,127 60,68 38,68 36,62" fill="#FFE878" opacity="0.2"/>
+    <polygon points="42,3 22,3 6,62 26,62 25,57 56,8" fill="#E8A820"/>
+    <polygon points="26,62 10,127 58,68 36,68 34,62" fill="#B87808"/>
+  </svg>
+  <div class="hero-wordmark">I N D R A</div>
+  <div class="hero-sub-wordmark">Post-Quantum Blockchain</div>
+  <div class="hero-divider"></div>
+  <p class="hero-desc">BFT consensus with Dilithium2 quantum-resistant signatures. VRF proposer election. Validator-earned rewards. No premine. No foundation.</p>
+  <div class="hero-actions">
+    <a href="#docs" class="btn-primary">Run a Validator</a>
+    <a href="#explorer" class="btn-secondary">View Explorer</a>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-item">
+    <span class="ticker-label">Network</span>
+    <span class="ticker-val">indra-testnet-1</span>
+  </div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">Block Height</span>
+    <span class="ticker-val live" id="t-height">—</span>
+  </div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">Validators</span>
+    <span class="ticker-val" id="t-validators">—</span>
+  </div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">Total Staked</span>
+    <span class="ticker-val" id="t-staked">—</span>
+  </div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">Block Reward</span>
+    <span class="ticker-val" id="t-reward">—</span>
+  </div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">Base Fee</span>
+    <span class="ticker-val" id="t-fee">—</span>
+  </div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">Epoch</span>
+    <span class="ticker-val" id="t-epoch">—</span>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section>
+  <div class="section-label">Protocol</div>
+  <h2>Built for the post-quantum era.</h2>
+  <p class="section-sub">Every design decision in INDRA is oriented toward long-term cryptographic security and validator fairness.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-num">01</div>
+      <div class="feature-title">Dilithium2 Consensus</div>
+      <div class="feature-desc">All quorum certificates use CRYSTALS-Dilithium2 signatures. Quantum-resistant by construction, not as an add-on.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">02</div>
+      <div class="feature-title">VRF Proposer Election</div>
+      <div class="feature-desc">Block proposers elected via verifiable random function using height+round. Unpredictable, unforgeable, verifiable by all.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">03</div>
+      <div class="feature-title">BFT Finality</div>
+      <div class="feature-desc">Byzantine fault-tolerant consensus. 6-second block time. Round-0 finalization under normal network conditions.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">04</div>
+      <div class="feature-title">Hybrid Tx Signatures</div>
+      <div class="feature-desc">Transactions signed with Ed25519 and Dilithium2. Forward-secure against future quantum adversaries.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">05</div>
+      <div class="feature-title">No Premine</div>
+      <div class="feature-desc">100% of INDRA is validator-earned. No foundation allocation. No team vesting. Era 1 block reward: 11.892 INDRA.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">06</div>
+      <div class="feature-title">Dynamic Validator Set</div>
+      <div class="feature-desc">Validator slots grow proportionally with total stake. Phase 1: 20 validators. No hard minimum stake requirement.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORER -->
+<section id="explorer">
+  <div class="section-label">Explorer</div>
+  <h2>Live chain data.</h2>
+  <p class="section-sub">Real-time block and validator data from the INDRA RPC at rpc.indraprotocol.com.</p>
+
+  <div class="explorer-wrap">
+    <div class="explorer-topbar">
+      <span class="explorer-topbar-title">rpc.indraprotocol.com</span>
+      <div class="live-pill"><span class="live-dot"></span>Live</div>
+    </div>
+
+    <div class="chain-stats-row">
+      <div class="cs-item"><div class="cs-label">Height</div><div class="cs-val" id="cs-height">—</div></div>
+      <div class="cs-item"><div class="cs-label">Era</div><div class="cs-val normal" id="cs-era">—</div></div>
+      <div class="cs-item"><div class="cs-label">Peers</div><div class="cs-val normal" id="cs-peers">—</div></div>
+      <div class="cs-item"><div class="cs-label">Mempool</div><div class="cs-val normal" id="cs-mempool">—</div></div>
+      <div class="cs-item"><div class="cs-label">Supply</div><div class="cs-val normal" id="cs-supply">—</div></div>
+      <div class="cs-item"><div class="cs-label">Tip Hash</div><div class="cs-val normal" id="cs-tip" style="font-size:0.5625rem;">—</div></div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('blocks')">Recent Blocks</button>
+      <button class="tab-btn" onclick="switchTab('lookup')">Address Lookup</button>
+    </div>
+
+    <div class="tab-content active" id="tab-blocks">
+      <div id="blocks-loading" class="loading">Connecting to rpc.indraprotocol.com...</div>
+      <table id="blocks-table" style="display:none;">
+        <thead>
+          <tr>
+            <th>Height</th>
+            <th>Block Hash</th>
+            <th>Txs</th>
+            <th>Base Fee</th>
+          </tr>
+        </thead>
+        <tbody id="blocks-body"></tbody>
+      </table>
+    </div>
+
+    <div class="tab-content" id="tab-lookup">
+      <div class="lookup-row">
+        <input class="lookup-input" id="lookup-addr" placeholder="Enter address (64-char hex)..." />
+        <button class="lookup-go" onclick="lookupBalance()">Lookup</button>
+      </div>
+      <div class="lookup-result" id="lookup-result">
+        <div class="lr-label">Address</div>
+        <div class="lr-val" id="lr-address">—</div>
+        <div class="lr-label">Balance</div>
+        <div class="lr-val big" id="lr-balance">—</div>
+        <div class="lr-label">Spark</div>
+        <div class="lr-val" id="lr-spark">—</div>
+      </div>
+      <div class="lookup-err" id="lookup-err"></div>
+      <div class="addr-shortcuts">
+        <div style="font-family:monospace;font-size:0.5625rem;color:var(--gold-dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.375rem;">Genesis Validators</div>
+        <div class="addr-row" onclick="setAddr('28ce6ab9565c324950a4308ccd1187c473fa737d4e687e12121c04b0e4c8c1b6')">
+          <span class="v-badge v-buddhi">buddhi</span>
+          <span class="addr-hex">28ce6ab9565c324950a4308ccd1187c473fa737d4e687e12121c04b0e4c8c1b6</span>
+        </div>
+        <div class="addr-row" onclick="setAddr('864d9d131f0296d3cd438611daabb012f7638381ce84945485f1925c0628aed1')">
+          <span class="v-badge v-siddhi">siddhi</span>
+          <span class="addr-hex">864d9d131f0296d3cd438611daabb012f7638381ce84945485f1925c0628aed1</span>
+        </div>
+        <div class="addr-row" onclick="setAddr('bf642abaff63684b3aa9d989e063d5868fba70889c6b18ff82e233828b1925e1')">
+          <span class="v-badge v-kushal">kushal</span>
+          <span class="addr-hex">bf642abaff63684b3aa9d989e063d5868fba70889c6b18ff82e233828b1925e1</span>
+        </div>
+        <div class="addr-row" onclick="setAddr('753c569bca3a18247e3de4f538ece4cc8a2e69e0f29e0e9c586d7e6a20f966b2')">
+          <span class="v-badge v-bonkai">bonkai</span>
+          <span class="addr-hex">753c569bca3a18247e3de4f538ece4cc8a2e69e0f29e0e9c586d7e6a20f966b2</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALIDATORS -->
+<section id="validators">
+  <div class="section-label">Validators</div>
+  <h2>Genesis validator set.</h2>
+  <p class="section-sub">4 active validators securing the INDRA testnet with equal stake and equal voting power.</p>
+  <div class="validators-grid" id="validators-grid">
+    <div class="loading">Loading validator set...</div>
+  </div>
+</section>
+
+<!-- DOCS -->
+<section id="docs">
+  <div class="section-label">Documentation</div>
+  <h2>Run a validator in one command.</h2>
+  <p class="section-sub">The INDRA installer handles binary download, key generation, genesis configuration, and node startup automatically.</p>
+
+  <div class="install-box">
+    <div class="install-titlebar">
+      <span class="dot" style="background:#ff5f57;"></span>
+      <span class="dot" style="background:#febc2e;"></span>
+      <span class="dot" style="background:#28c840;"></span>
+      <span style="font-family:monospace;font-size:0.5625rem;color:var(--muted);margin-left:0.5rem;letter-spacing:0.08em;">bash — indra-bootstrap</span>
+      <button class="copy-btn" onclick="copyInstall()">Copy</button>
+    </div>
+    <div class="install-body">
+      <span class="c"># Download and install INDRA</span><br>
+      <span class="cmd">curl</span> <span class="flag">-sSf</span> <span class="val">https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh</span> | bash<br><br>
+      <span class="c"># Generate your validator keys</span><br>
+      <span class="cmd">indra-keygen</span> <span class="flag">--name</span> <span class="val">yourname</span> <span class="flag">--output</span> ~/.indra/data/keys.json<br><br>
+      <span class="c"># Start your validator node</span><br>
+      <span class="cmd">indra-node</span> <span class="flag">--data-dir</span> ~/.indra/data \<br>
+      &nbsp;&nbsp;<span class="flag">--genesis</span> ~/.indra/data/genesis.toml \<br>
+      &nbsp;&nbsp;<span class="flag">--keys</span> ~/.indra/data/keys.json \<br>
+      &nbsp;&nbsp;<span class="flag">--bootstrap-peers</span> <span class="val">116.203.185.28:30303</span>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-item">
+      <div class="info-label">RPC Endpoint</div>
+      <div class="info-val"><a href="https://rpc.indraprotocol.com" target="_blank">rpc.indraprotocol.com</a></div>
+    </div>
+    <div class="info-item">
+      <div class="info-label">P2P Bootstrap</div>
+      <div class="info-val">116.203.185.28:30303</div>
+    </div>
+    <div class="info-item">
+      <div class="info-label">Chain ID</div>
+      <div class="info-val">indra-testnet-1</div>
+    </div>
+    <div class="info-item">
+      <div class="info-label">Source Code</div>
+      <div class="info-val"><a href="https://github.com/jyothisarath096/indra" target="_blank">github.com/jyothisarath096/indra</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- WALLET -->
+<section id="wallet">
+  <div class="section-label">Wallet</div>
+  <h2>Native applications.</h2>
+  <p class="section-sub">INDRA ships native iOS and macOS applications with real Dilithium2 key generation and live testnet connectivity.</p>
+  <div class="wallet-grid">
+    <div class="wallet-card">
+      <div class="wallet-icon">📱</div>
+      <div class="wallet-title">iOS Wallet</div>
+      <div class="wallet-desc">SwiftUI. Real FFI keygen via Dilithium2. 24-word BIP-39 recovery. Live balance. Send and receive INDRA.</div>
+      <span class="pill pill-gold">Coming to TestFlight</span>
+    </div>
+    <div class="wallet-card">
+      <div class="wallet-icon">💻</div>
+      <div class="wallet-title">Mac Validator App</div>
+      <div class="wallet-desc">Native macOS. Remote RPC mode. Live block dashboard. Validator metrics. No double-signing.</div>
+      <a href="https://github.com/jyothisarath096/indra-mac" target="_blank" style="font-family:monospace;font-size:0.6875rem;color:var(--gold);text-decoration:none;">View on GitHub →</a>
+    </div>
+    <div class="wallet-card">
+      <div class="wallet-icon">⌨️</div>
+      <div class="wallet-title">CLI Wallet</div>
+      <div class="wallet-desc">indra-tx CLI. Send, receive, and check balances from any Linux or macOS terminal. Included in the installer.</div>
+      <span class="pill pill-green">Live on Testnet</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <svg width="14" height="28" viewBox="0 0 72 130" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="42,3 22,3 6,62 26,62 25,57 56,8" fill="#E8A820"/>
+      <polygon points="26,62 10,127 58,68 36,68 34,62" fill="#B87808"/>
+    </svg>
+    <span class="footer-wordmark">I N D R A</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://github.com/jyothisarath096/indra" target="_blank">GitHub</a>
+    <a href="https://github.com/jyothisarath096/indra-ios" target="_blank">iOS</a>
+    <a href="https://github.com/jyothisarath096/indra-mac" target="_blank">Mac</a>
+    <a href="https://rpc.indraprotocol.com" target="_blank">RPC</a>
+  </div>
+  <span class="footer-copy">© 2026 INDRA Protocol — Testnet</span>
+</footer>
+
+<script>
+const RPC = 'https://rpc.indraprotocol.com';
+const VNAMES = {
+  '28ce6ab9565c324950a4308ccd1187c473fa737d4e687e12121c04b0e4c8c1b6': 'buddhi',
+  '864d9d131f0296d3cd438611daabb012f7638381ce84945485f1925c0628aed1': 'siddhi',
+  'bf642abaff63684b3aa9d989e063d5868fba70889c6b18ff82e233828b1925e1': 'kushal',
+  '753c569bca3a18247e3de4f538ece4cc8a2e69e0f29e0e9c586d7e6a20f966b2': 'bonkai'
+};
+
+async function rpc(method, params=[]) {
+  const r = await fetch(RPC, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({jsonrpc:'2.0',method,params,id:1})
+  });
+  const d = await r.json();
+  if(d.error) throw new Error(d.error.message);
+  return d.result;
+}
+
+function sh(h) { return h ? h.slice(0,8)+'...'+h.slice(-6) : '—'; }
+function spark2i(s) { return (Number(s)/1e8).toFixed(8)+' INDRA'; }
+function vbadge(id) {
+  const n = VNAMES[id] || id.slice(0,8);
+  return `<span class="v-badge v-${VNAMES[id]||'buddhi'}">${n}</span>`;
+}
+
+let blocks = [], lastH = 0;
+
+async function updateChain() {
+  try {
+    const info = await rpc('indra_getChainInfo');
+    document.getElementById('t-height').textContent = info.height;
+    document.getElementById('t-validators').textContent = info.active_validators;
+    document.getElementById('t-staked').textContent = (Number(info.total_staked_spark)/1e8).toFixed(0)+' INDRA';
+    document.getElementById('t-reward').textContent = (Number(info.block_reward_spark)/1e8).toFixed(4)+' INDRA';
+    document.getElementById('t-fee').textContent = info.base_fee+' Spark';
+    document.getElementById('t-epoch').textContent = info.epoch;
+    document.getElementById('cs-height').textContent = info.height;
+    document.getElementById('cs-era').textContent = info.era;
+    document.getElementById('cs-peers').textContent = info.peers;
+    document.getElementById('cs-mempool').textContent = info.mempool_size;
+    document.getElementById('cs-supply').textContent = (Number(info.total_supply)/1e8).toFixed(0)+' INDRA';
+    document.getElementById('cs-tip').textContent = sh(info.tip_hash);
+    if(info.height !== lastH) {
+      blocks.unshift({height:info.height, hash:info.tip_hash, base_fee:info.base_fee, txs:info.mempool_size||0});
+      if(blocks.length>20) blocks.pop();
+      lastH = info.height;
+      renderBlocks();
+    }
+    document.getElementById('blocks-loading').style.display='none';
+    document.getElementById('blocks-table').style.display='table';
+  } catch(e) {
+    document.getElementById('blocks-loading').textContent = 'Unable to reach RPC — retrying...';
+  }
+}
+
+function renderBlocks() {
+  const tb = document.getElementById('blocks-body');
+  if(!blocks.length) { tb.innerHTML='<tr><td colspan="4" style="color:var(--muted);text-align:center;padding:2rem;">Waiting for blocks...</td></tr>'; return; }
+  tb.innerHTML = blocks.map(b=>`
+    <tr>
+      <td style="font-weight:600;color:var(--gold);">#${b.height}</td>
+      <td class="hash-cell">${sh(b.hash)}</td>
+      <td style="color:${b.txs>0?'var(--green)':'var(--muted)'};">${b.txs}</td>
+      <td style="color:var(--muted);">${b.base_fee} Spark</td>
+    </tr>
+  `).join('');
+}
+
+async function updateValidators() {
+  try {
+    const data = await rpc('indra_getValidatorSet');
+    const grid = document.getElementById('validators-grid');
+    grid.innerHTML = data.validators.map(v => {
+      const name = v.name || VNAMES[v.validator_id] || 'unknown';
+      return `
+        <div class="val-card">
+          <div class="val-name"><span class="v-badge v-${name}" style="font-size:0.75rem;padding:0.25rem 0.75rem;">${name}</span></div>
+          <div class="val-id">${v.validator_id}</div>
+          <div class="val-row"><span class="val-row-label">Stake</span><span class="val-row-val">${(Number(v.stake)/1e8).toFixed(0)} INDRA</span></div>
+          <div class="val-row"><span class="val-row-label">Status</span><span class="val-row-val status-active">● ${v.status}</span></div>
+          <div class="val-row"><span class="val-row-label">Commission</span><span class="val-row-val">${(v.commission_bps/100).toFixed(0)}%</span></div>
+          <div class="val-row"><span class="val-row-label">Epoch Joined</span><span class="val-row-val">${v.epoch_joined}</span></div>
+        </div>
+      `;
+    }).join('');
+  } catch(e) {
+    document.getElementById('validators-grid').innerHTML='<div class="loading">Failed to load validators</div>';
+  }
+}
+
+async function lookupBalance() {
+  const addr = document.getElementById('lookup-addr').value.trim();
+  const errEl = document.getElementById('lookup-err');
+  const resEl = document.getElementById('lookup-result');
+  errEl.textContent=''; resEl.classList.remove('show');
+  if(!addr||addr.length<10){errEl.textContent='Enter a valid address.';return;}
+  try {
+    const data = await rpc('indra_getBalance',[addr]);
+    document.getElementById('lr-address').textContent = addr;
+    document.getElementById('lr-balance').textContent = (Number(data.balance)/1e8).toFixed(8)+' INDRA';
+    document.getElementById('lr-spark').textContent = Number(data.balance).toLocaleString()+' Spark';
+    resEl.classList.add('show');
+  } catch(e) { errEl.textContent='Error: '+e.message; }
+}
+
+function setAddr(addr) {
+  document.getElementById('lookup-addr').value=addr;
+  switchTab('lookup');
+}
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{
+    b.classList.toggle('active',['blocks','lookup'][i]===name);
+  });
+  document.querySelectorAll('.tab-content').forEach(c=>{
+    c.classList.toggle('active',c.id==='tab-'+name);
+  });
+}
+
+function copyInstall() {
+  const txt = `curl -sSf https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh | bash\nindra-keygen --name yourname --output ~/.indra/data/keys.json\nindra-node --data-dir ~/.indra/data --genesis ~/.indra/data/genesis.toml --keys ~/.indra/data/keys.json --bootstrap-peers 116.203.185.28:30303`;
+  navigator.clipboard.writeText(txt).then(()=>{
+    const btn=document.querySelector('.copy-btn');
+    btn.textContent='Copied!';
+    setTimeout(()=>btn.textContent='Copy',2000);
+  });
+}
+
+updateChain();
+updateValidators();
+setInterval(updateChain,6000);
+setInterval(updateValidators,30000);
+</script>
+</body>
+</html>

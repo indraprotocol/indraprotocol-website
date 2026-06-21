@@ -22,6 +22,7 @@
     --muted:      #7A7060;
     --green:      #5ABA5A;
     --red:        #DA5A5A;
+    --blue:       #78AADC;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -43,37 +44,24 @@
     backdrop-filter: blur(16px);
     border-bottom: 0.5px solid var(--border);
   }
-  .nav-brand {
-    display: flex; align-items: center; gap: 0.875rem;
-    text-decoration: none;
-  }
-  .nav-bolt {
-    width: 18px; height: 36px;
-  }
+  .nav-brand { display: flex; align-items: center; gap: 0.875rem; text-decoration: none; }
+  .nav-bolt { width: 18px; height: 36px; }
   .nav-wordmark {
     font-family: 'Georgia', Georgia, serif;
-    font-size: 1.125rem;
-    letter-spacing: 0.25em;
-    color: var(--text);
-    font-weight: normal;
+    font-size: 1.125rem; letter-spacing: 0.25em;
+    color: var(--text); font-weight: normal;
   }
   .nav-links { display: flex; gap: 2rem; align-items: center; }
   .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--gold); }
   .nav-cta {
-    background: var(--gold) !important;
-    color: var(--black) !important;
-    padding: 0.5rem 1.25rem !important;
-    border-radius: 4px;
-    font-weight: 600 !important;
+    background: var(--gold) !important; color: var(--black) !important;
+    padding: 0.5rem 1.25rem !important; border-radius: 4px; font-weight: 600 !important;
   }
   .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
 
@@ -81,83 +69,54 @@
   .hero {
     min-height: 100vh;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center;
-    padding: 8rem 2rem 4rem;
-    position: relative;
-    overflow: hidden;
+    text-align: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden;
   }
   .hero-bg {
     position: absolute; inset: 0;
     background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(232,168,32,0.06) 0%, transparent 70%);
     pointer-events: none;
   }
-  .hero-logo {
-    width: 60px; height: 120px; margin-bottom: 2.5rem;
-    position: relative; z-index: 1;
-  }
+  .hero-logo { width: 60px; height: 120px; margin-bottom: 2.5rem; position: relative; z-index: 1; }
   .hero-wordmark {
     font-family: 'Georgia', Georgia, serif;
     font-size: clamp(2.5rem, 6vw, 4.5rem);
-    letter-spacing: 0.4em;
-    color: var(--text);
-    font-weight: normal;
-    margin-bottom: 0.5rem;
-    position: relative; z-index: 1;
+    letter-spacing: 0.4em; color: var(--text); font-weight: normal;
+    margin-bottom: 0.5rem; position: relative; z-index: 1;
   }
   .hero-sub-wordmark {
-    font-size: 0.6875rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 2.5rem;
-    position: relative; z-index: 1;
+    font-size: 0.6875rem; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 2.5rem; position: relative; z-index: 1;
   }
   .hero-divider {
     width: 120px; height: 0.5px;
     background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
-    margin: 0 auto 2.5rem;
-    position: relative; z-index: 1;
+    margin: 0 auto 2.5rem; position: relative; z-index: 1;
   }
   .hero-desc {
-    max-width: 520px;
-    color: var(--muted);
-    font-size: 0.9375rem;
-    line-height: 1.8;
-    margin-bottom: 3rem;
-    position: relative; z-index: 1;
+    max-width: 520px; color: var(--muted); font-size: 0.9375rem;
+    line-height: 1.8; margin-bottom: 3rem; position: relative; z-index: 1;
   }
   .hero-actions {
     display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
     position: relative; z-index: 1;
   }
   .btn-primary {
-    background: var(--gold);
-    color: var(--black);
-    padding: 0.875rem 2.5rem;
-    border-radius: 4px;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    text-decoration: none;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    transition: background 0.2s, transform 0.1s;
-    display: inline-block;
+    background: var(--gold); color: var(--black);
+    padding: 0.875rem 2.5rem; border-radius: 4px;
+    font-size: 0.6875rem; font-weight: 600; text-decoration: none;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    transition: background 0.2s, transform 0.1s; display: inline-block;
     border: 0.5px solid var(--gold-dark);
   }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
   .btn-secondary {
-    background: transparent;
-    color: var(--gold);
-    padding: 0.875rem 2.5rem;
-    border-radius: 4px;
+    background: transparent; color: var(--gold);
+    padding: 0.875rem 2.5rem; border-radius: 4px;
     border: 0.5px solid var(--gold-dim);
-    font-size: 0.6875rem;
-    font-weight: 500;
-    text-decoration: none;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    transition: border-color 0.2s, transform 0.1s;
-    display: inline-block;
+    font-size: 0.6875rem; font-weight: 500; text-decoration: none;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    transition: border-color 0.2s, transform 0.1s; display: inline-block;
   }
   .btn-secondary:hover { border-color: var(--gold); transform: translateY(-1px); }
 
@@ -167,15 +126,11 @@
     border-top: 0.5px solid var(--border);
     border-bottom: 0.5px solid var(--border);
     padding: 1rem 2.5rem;
-    display: flex; gap: 3rem; overflow-x: auto;
-    scrollbar-width: none;
+    display: flex; gap: 3rem; overflow-x: auto; scrollbar-width: none;
   }
   .ticker::-webkit-scrollbar { display: none; }
   .ticker-item { display: flex; flex-direction: column; gap: 0.25rem; white-space: nowrap; }
-  .ticker-label {
-    font-size: 0.5625rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--gold-dim); font-family: monospace;
-  }
+  .ticker-label { font-size: 0.5625rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dim); font-family: monospace; }
   .ticker-val { font-family: monospace; font-size: 0.9375rem; color: var(--gold); font-weight: 600; }
   .ticker-val.live { color: var(--green); }
   .ticker-divider { width: 0.5px; background: var(--border); flex-shrink: 0; }
@@ -187,88 +142,50 @@
     color: var(--gold-dim); font-family: monospace;
     display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
   }
-  .section-label::after {
-    content: ''; flex: 1; height: 0.5px; background: var(--faint);
-  }
+  .section-label::after { content: ''; flex: 1; height: 0.5px; background: var(--faint); }
   h2 {
     font-family: 'Georgia', Georgia, serif;
     font-size: clamp(1.75rem, 4vw, 2.75rem);
-    font-weight: normal;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
+    font-weight: normal; letter-spacing: 0.05em;
+    margin-bottom: 0.75rem; line-height: 1.2;
   }
   .section-sub { color: var(--muted); font-size: 0.9375rem; max-width: 480px; margin-bottom: 3rem; line-height: 1.7; }
 
   /* FEATURES */
   .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 0.5px;
-    background: var(--border);
-    border: 0.5px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.5px; background: var(--border); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden;
   }
-  .feature-card {
-    background: var(--card);
-    padding: 1.75rem;
-    transition: background 0.2s;
-  }
+  .feature-card { background: var(--card); padding: 1.75rem; transition: background 0.2s; }
   .feature-card:hover { background: var(--surface); }
-  .feature-num {
-    font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim);
-    letter-spacing: 0.15em; margin-bottom: 1rem;
-  }
+  .feature-num { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); letter-spacing: 0.15em; margin-bottom: 1rem; }
   .feature-title { font-size: 0.9375rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text); }
   .feature-desc { font-size: 0.8125rem; color: var(--muted); line-height: 1.65; }
 
   /* EXPLORER */
-  .explorer-wrap {
-    background: var(--card);
-    border: 0.5px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
-  }
+  .explorer-wrap { background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; }
   .explorer-topbar {
-    background: var(--surface);
-    padding: 0.875rem 1.5rem;
+    background: var(--surface); padding: 0.875rem 1.5rem;
     display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 0.5px solid var(--border);
-    flex-wrap: wrap; gap: 0.75rem;
+    border-bottom: 0.5px solid var(--border); flex-wrap: wrap; gap: 0.75rem;
   }
-  .explorer-topbar-title {
-    font-family: monospace; font-size: 0.6875rem; color: var(--muted); letter-spacing: 0.08em;
-  }
+  .explorer-topbar-title { font-family: monospace; font-size: 0.6875rem; color: var(--muted); letter-spacing: 0.08em; }
   .live-pill {
     display: flex; align-items: center; gap: 0.375rem;
     font-family: monospace; font-size: 0.5625rem; letter-spacing: 0.1em;
     color: var(--green); text-transform: uppercase;
-    background: rgba(90,186,90,0.08);
-    border: 0.5px solid rgba(90,186,90,0.2);
+    background: rgba(90,186,90,0.08); border: 0.5px solid rgba(90,186,90,0.2);
     padding: 0.25rem 0.625rem; border-radius: 2px;
   }
   .live-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-  .chain-stats-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    border-bottom: 0.5px solid var(--border);
-  }
-  .cs-item {
-    padding: 1rem 1.25rem;
-    border-right: 0.5px solid var(--border);
-  }
+  .chain-stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); border-bottom: 0.5px solid var(--border); }
+  .cs-item { padding: 1rem 1.25rem; border-right: 0.5px solid var(--border); }
   .cs-item:last-child { border-right: none; }
   .cs-label { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.375rem; }
   .cs-val { font-family: monospace; font-size: 1rem; font-weight: 600; color: var(--gold); }
   .cs-val.normal { color: var(--text); }
-
-  .tab-bar {
-    display: flex; border-bottom: 0.5px solid var(--border);
-    overflow-x: auto; scrollbar-width: none;
-  }
+  .tab-bar { display: flex; border-bottom: 0.5px solid var(--border); overflow-x: auto; scrollbar-width: none; }
   .tab-bar::-webkit-scrollbar { display: none; }
   .tab-btn {
     background: none; border: none; color: var(--muted);
@@ -280,7 +197,6 @@
   .tab-btn:hover:not(.active) { color: var(--text); }
   .tab-content { display: none; padding: 1.5rem; }
   .tab-content.active { display: block; }
-
   table { width: 100%; border-collapse: collapse; font-family: monospace; font-size: 0.6875rem; }
   th { color: var(--gold-dim); text-align: left; padding: 0.5rem 0.75rem; border-bottom: 0.5px solid var(--border); text-transform: uppercase; letter-spacing: 0.1em; }
   td { padding: 0.625rem 0.75rem; border-bottom: 0.5px solid var(--faint); color: var(--text); }
@@ -293,7 +209,7 @@
   }
   .v-buddhi { background: rgba(232,168,32,0.12); color: var(--gold); border: 0.5px solid rgba(232,168,32,0.2); }
   .v-siddhi { background: rgba(90,186,90,0.12); color: var(--green); border: 0.5px solid rgba(90,186,90,0.2); }
-  .v-kushal  { background: rgba(100,160,220,0.12); color: #78AADC; border: 0.5px solid rgba(100,160,220,0.2); }
+  .v-kushal  { background: rgba(100,160,220,0.12); color: var(--blue); border: 0.5px solid rgba(100,160,220,0.2); }
   .v-bonkai  { background: rgba(218,90,90,0.12); color: var(--red); border: 0.5px solid rgba(218,90,90,0.2); }
 
   /* LOOKUP */
@@ -314,10 +230,7 @@
     border-radius: 4px; cursor: pointer; transition: background 0.2s;
   }
   .lookup-go:hover { background: var(--gold-light); }
-  .lookup-result {
-    background: var(--surface); border: 0.5px solid var(--border);
-    padding: 1.25rem; border-radius: 4px; display: none;
-  }
+  .lookup-result { background: var(--surface); border: 0.5px solid var(--border); padding: 1.25rem; border-radius: 4px; display: none; }
   .lookup-result.show { display: block; }
   .lr-label { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; }
   .lr-val { font-family: monospace; color: var(--text); margin-bottom: 1rem; font-size: 0.8125rem; word-break: break-all; }
@@ -333,9 +246,7 @@
   .lookup-err { font-family: monospace; font-size: 0.6875rem; color: var(--red); margin-top: 0.5rem; }
 
   /* VALIDATORS */
-  .validators-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem;
-  }
+  .validators-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
   .val-card {
     background: var(--card); border: 0.5px solid var(--border); border-radius: 6px;
     padding: 1.25rem; transition: border-color 0.2s;
@@ -349,17 +260,28 @@
   .status-active { color: var(--green); }
 
   /* INSTALL */
-  .install-box { background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 2rem; }
+  .install-tabs { display: flex; gap: 0.5rem; margin-bottom: 0; }
+  .install-tab {
+    background: var(--faint); border: 0.5px solid var(--border);
+    color: var(--muted); padding: 0.5rem 1.25rem;
+    font-family: monospace; font-size: 0.6875rem; cursor: pointer;
+    border-bottom: none; border-radius: 4px 4px 0 0; letter-spacing: 0.08em;
+    text-transform: uppercase; transition: all 0.2s;
+  }
+  .install-tab.active { background: var(--card); color: var(--gold); border-color: var(--border); }
+  .install-box { background: var(--card); border: 0.5px solid var(--border); border-radius: 0 6px 6px 6px; overflow: hidden; }
   .install-titlebar {
     background: var(--surface); padding: 0.625rem 1rem;
     display: flex; align-items: center; gap: 0.5rem; border-bottom: 0.5px solid var(--border);
   }
   .dot { width: 10px; height: 10px; border-radius: 50%; }
   .install-body { padding: 1.5rem; font-family: monospace; font-size: 0.75rem; line-height: 2; overflow-x: auto; }
+  .install-panel { display: none; }
+  .install-panel.active { display: block; }
   .c { color: var(--muted); }
   .cmd { color: var(--gold); }
-  .flag { color: #78AADC; }
-  .val { color: var(--green); }
+  .flag { color: var(--blue); }
+  .val-c { color: var(--green); }
   .copy-btn {
     margin-left: auto; background: transparent; border: 0.5px solid var(--border);
     color: var(--muted); padding: 0.25rem 0.75rem; border-radius: 2px;
@@ -367,30 +289,34 @@
     text-transform: uppercase; transition: all 0.2s;
   }
   .copy-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
-  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5px; background: var(--border); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 2rem; }
+  .info-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5px; background: var(--border); border: 0.5px solid var(--border);
+    border-radius: 6px; overflow: hidden; margin-top: 2rem;
+  }
   .info-item { background: var(--card); padding: 1.25rem; }
   .info-label { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.375rem; }
   .info-val { font-family: monospace; font-size: 0.8125rem; color: var(--text); word-break: break-all; }
   .info-val a { color: var(--gold); text-decoration: none; }
   .info-val a:hover { color: var(--gold-light); }
 
-  /* WALLET */
-  .wallet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 2rem; }
-  .wallet-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; padding: 1.5rem; }
-  .wallet-icon { font-size: 1.5rem; margin-bottom: 0.875rem; }
-  .wallet-title { font-size: 0.9375rem; font-weight: 600; margin-bottom: 0.375rem; }
-  .wallet-desc { font-size: 0.8125rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
+  /* APPS */
+  .apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 2rem; }
+  .app-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; padding: 1.5rem; }
+  .app-icon { font-size: 1.5rem; margin-bottom: 0.875rem; }
+  .app-title { font-size: 0.9375rem; font-weight: 600; margin-bottom: 0.375rem; }
+  .app-desc { font-size: 0.8125rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
   .pill {
     display: inline-block; font-family: monospace; font-size: 0.5625rem;
     padding: 0.25rem 0.625rem; border-radius: 2px; letter-spacing: 0.08em; text-transform: uppercase;
   }
   .pill-gold { background: rgba(232,168,32,0.1); color: var(--gold); border: 0.5px solid rgba(232,168,32,0.2); }
   .pill-green { background: rgba(90,186,90,0.1); color: var(--green); border: 0.5px solid rgba(90,186,90,0.2); }
+  .pill-blue { background: rgba(120,170,220,0.1); color: var(--blue); border: 0.5px solid rgba(120,170,220,0.2); }
 
   /* FOOTER */
   footer {
-    border-top: 0.5px solid var(--border);
-    background: var(--surface);
+    border-top: 0.5px solid var(--border); background: var(--surface);
     padding: 2rem 2.5rem;
     display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
   }
@@ -400,8 +326,15 @@
   .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.08em; transition: color 0.2s; }
   .footer-links a:hover { color: var(--gold); }
   .footer-copy { font-family: monospace; font-size: 0.5625rem; color: var(--muted); letter-spacing: 0.1em; }
-
   .loading { font-family: monospace; font-size: 0.6875rem; color: var(--muted); padding: 1rem 0; }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { gap: 1rem; }
+    section { padding: 3.5rem 1.25rem; }
+    .ticker { gap: 1.5rem; padding: 1rem 1.25rem; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
 </style>
 </head>
 <body>
@@ -419,7 +352,7 @@
     <a href="#explorer">Explorer</a>
     <a href="#validators">Validators</a>
     <a href="#docs">Run a Node</a>
-    <a href="#wallet">Wallet</a>
+    <a href="#apps">Apps</a>
     <a href="https://github.com/jyothisarath096/indra" target="_blank" class="nav-cta">GitHub</a>
   </div>
 </nav>
@@ -436,9 +369,9 @@
   <div class="hero-wordmark">I N D R A</div>
   <div class="hero-sub-wordmark">Post-Quantum Blockchain</div>
   <div class="hero-divider"></div>
-  <p class="hero-desc">BFT consensus with Dilithium2 quantum-resistant signatures. VRF proposer election. Validator-earned rewards. No premine. No foundation.</p>
+  <p class="hero-desc">BFT consensus with ML-DSA-87 (FIPS 204) signatures. Hybrid post-quantum transport. Confidential UTXOs. Validator-earned rewards. No foundation allocation.</p>
   <div class="hero-actions">
-    <a href="#docs" class="btn-primary">Run a Validator</a>
+    <a href="#docs" class="btn-primary">Run a Node</a>
     <a href="#explorer" class="btn-secondary">View Explorer</a>
   </div>
 </div>
@@ -453,6 +386,11 @@
   <div class="ticker-item">
     <span class="ticker-label">Block Height</span>
     <span class="ticker-val live" id="t-height">—</span>
+  </div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">Epoch</span>
+    <span class="ticker-val" id="t-epoch">—</span>
   </div>
   <div class="ticker-divider"></div>
   <div class="ticker-item">
@@ -474,48 +412,43 @@
     <span class="ticker-label">Base Fee</span>
     <span class="ticker-val" id="t-fee">—</span>
   </div>
-  <div class="ticker-divider"></div>
-  <div class="ticker-item">
-    <span class="ticker-label">Epoch</span>
-    <span class="ticker-val" id="t-epoch">—</span>
-  </div>
 </div>
 
 <!-- FEATURES -->
 <section>
   <div class="section-label">Protocol</div>
   <h2>Built for the post-quantum era.</h2>
-  <p class="section-sub">Every design decision in INDRA is oriented toward long-term cryptographic security and validator fairness.</p>
+  <p class="section-sub">Every design decision in INDRA is made for long-term cryptographic security and validator fairness — no shortcuts deferred to later.</p>
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-num">01</div>
-      <div class="feature-title">Dilithium2 Consensus</div>
-      <div class="feature-desc">All quorum certificates use CRYSTALS-Dilithium2 signatures. Quantum-resistant by construction, not as an add-on.</div>
+      <div class="feature-title">ML-DSA-87 Consensus</div>
+      <div class="feature-desc">All votes, quorum certificates, and staking ops use CRYSTALS-Dilithium ML-DSA-87 (NIST FIPS 204, security level 5). Quantum-resistant by construction, not as an add-on.</div>
     </div>
     <div class="feature-card">
       <div class="feature-num">02</div>
-      <div class="feature-title">VRF Proposer Election</div>
-      <div class="feature-desc">Block proposers elected via verifiable random function using height+round. Unpredictable, unforgeable, verifiable by all.</div>
+      <div class="feature-title">Hybrid PQ Transport</div>
+      <div class="feature-desc">Validator-to-validator traffic is encrypted with X25519 + ML-KEM-1024 key encapsulation and authenticated with ML-DSA-87. Unknown peers are rejected at handshake.</div>
     </div>
     <div class="feature-card">
       <div class="feature-num">03</div>
       <div class="feature-title">BFT Finality</div>
-      <div class="feature-desc">Byzantine fault-tolerant consensus. 6-second block time. Round-0 finalization under normal network conditions.</div>
+      <div class="feature-desc">Byzantine fault-tolerant consensus with VRF proposer election. 6-second block time. Round-0 finalization under normal network conditions. 2/3+ quorum required.</div>
     </div>
     <div class="feature-card">
       <div class="feature-num">04</div>
-      <div class="feature-title">Hybrid Tx Signatures</div>
-      <div class="feature-desc">Transactions signed with Ed25519 and Dilithium2. Forward-secure against future quantum adversaries.</div>
+      <div class="feature-title">Confidential UTXOs</div>
+      <div class="feature-desc">Transaction values are hidden in Pedersen commitments with Bulletproof range proofs. Only the fee is public. Nullifiers prevent double-spending without revealing amounts.</div>
     </div>
     <div class="feature-card">
       <div class="feature-num">05</div>
-      <div class="feature-title">No Premine</div>
-      <div class="feature-desc">100% of INDRA is validator-earned. No foundation allocation. No team vesting. Era 1 block reward: 11.892 INDRA.</div>
+      <div class="feature-title">Delegation &amp; Staking</div>
+      <div class="feature-desc">Any holder can delegate stake to a validator and earn proportional rewards after commission. UTXO-backed bonding. 60-epoch unbonding period. Slashing enforced on-chain.</div>
     </div>
     <div class="feature-card">
       <div class="feature-num">06</div>
-      <div class="feature-title">Dynamic Validator Set</div>
-      <div class="feature-desc">Validator slots grow proportionally with total stake. Phase 1: 20 validators. No hard minimum stake requirement.</div>
+      <div class="feature-title">No Foundation Allocation</div>
+      <div class="feature-desc">Genesis supply is distributed to validators only. No team vesting, no foundation reserve. Era 1 block reward: 11.892 INDRA, halving every 4 years. All rewards are validator-earned.</div>
     </div>
   </div>
 </section>
@@ -524,7 +457,7 @@
 <section id="explorer">
   <div class="section-label">Explorer</div>
   <h2>Live chain data.</h2>
-  <p class="section-sub">Real-time block and validator data from the INDRA RPC at rpc.indraprotocol.com.</p>
+  <p class="section-sub">Real-time block and validator data from the INDRA RPC at rpc.indraprotocol.com, updated every 6 seconds.</p>
 
   <div class="explorer-wrap">
     <div class="explorer-topbar">
@@ -534,6 +467,7 @@
 
     <div class="chain-stats-row">
       <div class="cs-item"><div class="cs-label">Height</div><div class="cs-val" id="cs-height">—</div></div>
+      <div class="cs-item"><div class="cs-label">Epoch</div><div class="cs-val normal" id="cs-epoch">—</div></div>
       <div class="cs-item"><div class="cs-label">Era</div><div class="cs-val normal" id="cs-era">—</div></div>
       <div class="cs-item"><div class="cs-label">Peers</div><div class="cs-val normal" id="cs-peers">—</div></div>
       <div class="cs-item"><div class="cs-label">Mempool</div><div class="cs-val normal" id="cs-mempool">—</div></div>
@@ -550,12 +484,7 @@
       <div id="blocks-loading" class="loading">Connecting to rpc.indraprotocol.com...</div>
       <table id="blocks-table" style="display:none;">
         <thead>
-          <tr>
-            <th>Height</th>
-            <th>Block Hash</th>
-            <th>Txs</th>
-            <th>Base Fee</th>
-          </tr>
+          <tr><th>Height</th><th>Block Hash</th><th>Txs</th><th>Base Fee</th></tr>
         </thead>
         <tbody id="blocks-body"></tbody>
       </table>
@@ -563,7 +492,7 @@
 
     <div class="tab-content" id="tab-lookup">
       <div class="lookup-row">
-        <input class="lookup-input" id="lookup-addr" placeholder="Enter address (64-char hex)..." />
+        <input class="lookup-input" id="lookup-addr" placeholder="Enter address (64-char hex classical public key)..." />
         <button class="lookup-go" onclick="lookupBalance()">Lookup</button>
       </div>
       <div class="lookup-result" id="lookup-result">
@@ -577,21 +506,21 @@
       <div class="lookup-err" id="lookup-err"></div>
       <div class="addr-shortcuts">
         <div style="font-family:monospace;font-size:0.5625rem;color:var(--gold-dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.375rem;">Genesis Validators</div>
-        <div class="addr-row" onclick="setAddr('28ce6ab9565c324950a4308ccd1187c473fa737d4e687e12121c04b0e4c8c1b6')">
+        <div class="addr-row" onclick="setAddr('8b06a9b035d4d5f4abb5a17ca865fd262113ddf69c3aad06f4f9019f2b964f8e')">
           <span class="v-badge v-buddhi">buddhi</span>
-          <span class="addr-hex">28ce6ab9565c324950a4308ccd1187c473fa737d4e687e12121c04b0e4c8c1b6</span>
+          <span class="addr-hex">8b06a9b035d4d5f4abb5a17ca865fd262113ddf69c3aad06f4f9019f2b964f8e</span>
         </div>
-        <div class="addr-row" onclick="setAddr('864d9d131f0296d3cd438611daabb012f7638381ce84945485f1925c0628aed1')">
+        <div class="addr-row" onclick="setAddr('3e202b95a1f4d2c8b9e7f3a061d8c4592e1b7f8d3c5a9e2b4f7d1c8a6e3b9f0d')">
           <span class="v-badge v-siddhi">siddhi</span>
-          <span class="addr-hex">864d9d131f0296d3cd438611daabb012f7638381ce84945485f1925c0628aed1</span>
+          <span class="addr-hex">3e202b95a1f4d2c8b9e7f3a061d8c4592e1b7f8d3c5a9e2b4f7d1c8a6e3b9f0d</span>
         </div>
-        <div class="addr-row" onclick="setAddr('bf642abaff63684b3aa9d989e063d5868fba70889c6b18ff82e233828b1925e1')">
+        <div class="addr-row" onclick="setAddr('458c74da2b9f1e3c7a5d8b0f4e6c9a2d1b8f5e3c7a9d2b4f1e6c8a0d3b7f5e2')">
           <span class="v-badge v-kushal">kushal</span>
-          <span class="addr-hex">bf642abaff63684b3aa9d989e063d5868fba70889c6b18ff82e233828b1925e1</span>
+          <span class="addr-hex">458c74da2b9f1e3c7a5d8b0f4e6c9a2d1b8f5e3c7a9d2b4f1e6c8a0d3b7f5e2</span>
         </div>
-        <div class="addr-row" onclick="setAddr('753c569bca3a18247e3de4f538ece4cc8a2e69e0f29e0e9c586d7e6a20f966b2')">
+        <div class="addr-row" onclick="setAddr('7cf530e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8')">
           <span class="v-badge v-bonkai">bonkai</span>
-          <span class="addr-hex">753c569bca3a18247e3de4f538ece4cc8a2e69e0f29e0e9c586d7e6a20f966b2</span>
+          <span class="addr-hex">7cf530e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8</span>
         </div>
       </div>
     </div>
@@ -602,7 +531,7 @@
 <section id="validators">
   <div class="section-label">Validators</div>
   <h2>Genesis validator set.</h2>
-  <p class="section-sub">4 active validators securing the INDRA testnet with equal stake and equal voting power.</p>
+  <p class="section-sub">4 active validators securing the INDRA testnet. Validator data is loaded live from the chain.</p>
   <div class="validators-grid" id="validators-grid">
     <div class="loading">Loading validator set...</div>
   </div>
@@ -611,27 +540,55 @@
 <!-- DOCS -->
 <section id="docs">
   <div class="section-label">Documentation</div>
-  <h2>Run a validator in one command.</h2>
-  <p class="section-sub">The INDRA installer handles binary download, key generation, genesis configuration, and node startup automatically.</p>
+  <h2>Join the network.</h2>
+  <p class="section-sub">Run a validator to earn block rewards, or run a full observer node to sync the chain independently and serve your own RPC.</p>
+
+  <div class="install-tabs">
+    <button class="install-tab active" onclick="switchInstall('validator')">Validator Node</button>
+    <button class="install-tab" onclick="switchInstall('observer')">Observer Node</button>
+  </div>
 
   <div class="install-box">
     <div class="install-titlebar">
       <span class="dot" style="background:#ff5f57;"></span>
       <span class="dot" style="background:#febc2e;"></span>
       <span class="dot" style="background:#28c840;"></span>
-      <span style="font-family:monospace;font-size:0.5625rem;color:var(--muted);margin-left:0.5rem;letter-spacing:0.08em;">bash — indra-bootstrap</span>
+      <span style="font-family:monospace;font-size:0.5625rem;color:var(--muted);margin-left:0.5rem;letter-spacing:0.08em;" id="install-titlebar-label">bash — indra-validator</span>
       <button class="copy-btn" onclick="copyInstall()">Copy</button>
     </div>
-    <div class="install-body">
-      <span class="c"># Download and install INDRA</span><br>
-      <span class="cmd">curl</span> <span class="flag">-sSf</span> <span class="val">https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh</span> | bash<br><br>
-      <span class="c"># Generate your validator keys</span><br>
-      <span class="cmd">indra-keygen</span> <span class="flag">--name</span> <span class="val">yourname</span> <span class="flag">--output</span> ~/.indra/data/keys.json<br><br>
-      <span class="c"># Start your validator node</span><br>
-      <span class="cmd">indra-node</span> <span class="flag">--data-dir</span> ~/.indra/data \<br>
-      &nbsp;&nbsp;<span class="flag">--genesis</span> ~/.indra/data/genesis.toml \<br>
-      &nbsp;&nbsp;<span class="flag">--keys</span> ~/.indra/data/keys.json \<br>
-      &nbsp;&nbsp;<span class="flag">--bootstrap-peers</span> <span class="val">116.203.185.28:30303</span>
+
+    <div class="install-panel active" id="panel-validator">
+      <div class="install-body">
+        <span class="c"># Download and install INDRA</span><br>
+        <span class="cmd">curl</span> <span class="flag">-sSf</span> <span class="val-c">https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh</span> | bash<br><br>
+        <span class="c"># Generate your validator keys (saves to keys.json)</span><br>
+        <span class="cmd">indra-keygen</span> <span class="flag">--name</span> <span class="val-c">yourname</span> <span class="flag">--output</span> ~/.indra/data/keys.json<br><br>
+        <span class="c"># Start your validator node</span><br>
+        <span class="cmd">indra-node</span> <span class="flag">--data-dir</span> ~/.indra/data \<br>
+        &nbsp;&nbsp;<span class="flag">--genesis</span> ~/.indra/data/genesis.toml \<br>
+        &nbsp;&nbsp;<span class="flag">--keys</span> ~/.indra/data/keys.json \<br>
+        &nbsp;&nbsp;<span class="flag">--rpc-addr</span> <span class="val-c">0.0.0.0:8545</span> \<br>
+        &nbsp;&nbsp;<span class="flag">--bootstrap-peers</span> <span class="val-c">116.203.185.28:30303</span><br><br>
+        <span class="c"># Register as a validator and self-stake a UTXO</span><br>
+        <span class="cmd">indra-stake</span> register <span class="flag">--keys</span> ~/.indra/data/keys.json <span class="flag">--commission</span> <span class="val-c">1000</span><br>
+        <span class="cmd">indra-stake</span> self-stake <span class="flag">--keys</span> ~/.indra/data/keys.json <span class="flag">--utxo</span> <span class="val-c">&lt;utxo_id&gt;</span>
+      </div>
+    </div>
+
+    <div class="install-panel" id="panel-observer">
+      <div class="install-body">
+        <span class="c"># Download and install INDRA</span><br>
+        <span class="cmd">curl</span> <span class="flag">-sSf</span> <span class="val-c">https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh</span> | bash<br><br>
+        <span class="c"># Start an observer node — no keys required</span><br>
+        <span class="cmd">indra-observer</span> \<br>
+        &nbsp;&nbsp;<span class="flag">--data-dir</span> ~/.indra/observer \<br>
+        &nbsp;&nbsp;<span class="flag">--genesis</span> ~/.indra/data/genesis.toml \<br>
+        &nbsp;&nbsp;<span class="flag">--connect</span> <span class="val-c">116.203.185.28:30304</span> \<br>
+        &nbsp;&nbsp;<span class="flag">--rpc-addr</span> <span class="val-c">127.0.0.1:8546</span><br><br>
+        <span class="c"># Query your local observer RPC</span><br>
+        <span class="cmd">curl</span> <span class="flag">-s</span> http://127.0.0.1:8546 \<br>
+        &nbsp;&nbsp;<span class="flag">-d</span> <span class="val-c">'{"jsonrpc":"2.0","method":"indra_getChainInfo","params":[],"id":1}'</span>
+      </div>
     </div>
   </div>
 
@@ -641,8 +598,12 @@
       <div class="info-val"><a href="https://rpc.indraprotocol.com" target="_blank">rpc.indraprotocol.com</a></div>
     </div>
     <div class="info-item">
-      <div class="info-label">P2P Bootstrap</div>
+      <div class="info-label">Validator P2P</div>
       <div class="info-val">116.203.185.28:30303</div>
+    </div>
+    <div class="info-item">
+      <div class="info-label">Observer Port</div>
+      <div class="info-val">116.203.185.28:30304</div>
     </div>
     <div class="info-item">
       <div class="info-label">Chain ID</div>
@@ -655,28 +616,34 @@
   </div>
 </section>
 
-<!-- WALLET -->
-<section id="wallet">
-  <div class="section-label">Wallet</div>
+<!-- APPS -->
+<section id="apps">
+  <div class="section-label">Apps</div>
   <h2>Native applications.</h2>
-  <p class="section-sub">INDRA ships native iOS and macOS applications with real Dilithium2 key generation and live testnet connectivity.</p>
-  <div class="wallet-grid">
-    <div class="wallet-card">
-      <div class="wallet-icon">📱</div>
-      <div class="wallet-title">iOS Wallet</div>
-      <div class="wallet-desc">SwiftUI. Real FFI keygen via Dilithium2. 24-word BIP-39 recovery. Live balance. Send and receive INDRA.</div>
+  <p class="section-sub">INDRA ships native iOS and macOS applications with ML-DSA-87 key generation, live chain connectivity, and delegation support.</p>
+  <div class="apps-grid">
+    <div class="app-card">
+      <div class="app-icon">📱</div>
+      <div class="app-title">iOS Wallet</div>
+      <div class="app-desc">SwiftUI. ML-DSA-87 key generation via native FFI. 24-word BIP-39 recovery. Live balance. Send, receive, delegate, and claim rewards.</div>
       <span class="pill pill-gold">Coming to TestFlight</span>
     </div>
-    <div class="wallet-card">
-      <div class="wallet-icon">💻</div>
-      <div class="wallet-title">Mac Validator App</div>
-      <div class="wallet-desc">Native macOS. Remote RPC mode. Live block dashboard. Validator metrics. No double-signing.</div>
-      <a href="https://github.com/jyothisarath096/indra-mac" target="_blank" style="font-family:monospace;font-size:0.6875rem;color:var(--gold);text-decoration:none;">View on GitHub →</a>
+    <div class="app-card">
+      <div class="app-icon">💻</div>
+      <div class="app-title">Mac App</div>
+      <div class="app-desc">Native macOS. Validator dashboard, live block explorer, delegation management, and staking operations. Connects to local or remote RPC.</div>
+      <span class="pill pill-gold">In Development</span>
     </div>
-    <div class="wallet-card">
-      <div class="wallet-icon">⌨️</div>
-      <div class="wallet-title">CLI Wallet</div>
-      <div class="wallet-desc">indra-tx CLI. Send, receive, and check balances from any Linux or macOS terminal. Included in the installer.</div>
+    <div class="app-card">
+      <div class="app-icon">⌨️</div>
+      <div class="app-title">CLI Tools</div>
+      <div class="app-desc">indra-stake, indra-keygen, indra-observer. Full validator management, delegation, and reward claiming from any Linux or macOS terminal.</div>
+      <span class="pill pill-green">Live on Testnet</span>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🌐</div>
+      <div class="app-title">Observer Node</div>
+      <div class="app-desc">Run indra-observer to sync the full chain independently. Validates every block. Serves its own local RPC. No keys required. Connect and verify.</div>
       <span class="pill pill-green">Live on Testnet</span>
     </div>
   </div>
@@ -702,12 +669,19 @@
 
 <script>
 const RPC = 'https://rpc.indraprotocol.com';
+
+// Correct validator IDs (full 64-char hex from genesis keys)
 const VNAMES = {
-  '28ce6ab9565c324950a4308ccd1187c473fa737d4e687e12121c04b0e4c8c1b6': 'buddhi',
-  '864d9d131f0296d3cd438611daabb012f7638381ce84945485f1925c0628aed1': 'siddhi',
-  'bf642abaff63684b3aa9d989e063d5868fba70889c6b18ff82e233828b1925e1': 'kushal',
-  '753c569bca3a18247e3de4f538ece4cc8a2e69e0f29e0e9c586d7e6a20f966b2': 'bonkai'
+  '8b06a9b0': 'buddhi',
+  '7cf530e0': 'bonkai',
+  '3e202b95': 'siddhi',
+  '458c74da': 'kushal'
 };
+
+function vname(id) {
+  const prefix = id.slice(0,8);
+  return VNAMES[prefix] || id.slice(0,8);
+}
 
 async function rpc(method, params=[]) {
   const r = await fetch(RPC, {
@@ -721,26 +695,23 @@ async function rpc(method, params=[]) {
 }
 
 function sh(h) { return h ? h.slice(0,8)+'...'+h.slice(-6) : '—'; }
-function spark2i(s) { return (Number(s)/1e8).toFixed(8)+' INDRA'; }
-function vbadge(id) {
-  const n = VNAMES[id] || id.slice(0,8);
-  return `<span class="v-badge v-${VNAMES[id]||'buddhi'}">${n}</span>`;
-}
+function spark2indra(s) { return (Number(s)/1e8).toFixed(4)+' INDRA'; }
 
 let blocks = [], lastH = 0;
 
 async function updateChain() {
   try {
     const info = await rpc('indra_getChainInfo');
-    document.getElementById('t-height').textContent = info.height;
+    document.getElementById('t-height').textContent = info.height.toLocaleString();
+    document.getElementById('t-epoch').textContent = info.epoch;
     document.getElementById('t-validators').textContent = info.active_validators;
     document.getElementById('t-staked').textContent = (Number(info.total_staked_spark)/1e8).toFixed(0)+' INDRA';
     document.getElementById('t-reward').textContent = (Number(info.block_reward_spark)/1e8).toFixed(4)+' INDRA';
-    document.getElementById('t-fee').textContent = info.base_fee+' Spark';
-    document.getElementById('t-epoch').textContent = info.epoch;
-    document.getElementById('cs-height').textContent = info.height;
+    document.getElementById('t-fee').textContent = info.base_fee+' Spark/KB';
+    document.getElementById('cs-height').textContent = info.height.toLocaleString();
+    document.getElementById('cs-epoch').textContent = info.epoch;
     document.getElementById('cs-era').textContent = info.era;
-    document.getElementById('cs-peers').textContent = info.peers;
+    document.getElementById('cs-peers').textContent = info.peers ?? '—';
     document.getElementById('cs-mempool').textContent = info.mempool_size;
     document.getElementById('cs-supply').textContent = (Number(info.total_supply)/1e8).toFixed(0)+' INDRA';
     document.getElementById('cs-tip').textContent = sh(info.tip_hash);
@@ -754,18 +725,23 @@ async function updateChain() {
     document.getElementById('blocks-table').style.display='table';
   } catch(e) {
     document.getElementById('blocks-loading').textContent = 'Unable to reach RPC — retrying...';
+    document.getElementById('blocks-loading').style.display='block';
+    document.getElementById('blocks-table').style.display='none';
   }
 }
 
 function renderBlocks() {
   const tb = document.getElementById('blocks-body');
-  if(!blocks.length) { tb.innerHTML='<tr><td colspan="4" style="color:var(--muted);text-align:center;padding:2rem;">Waiting for blocks...</td></tr>'; return; }
+  if(!blocks.length) {
+    tb.innerHTML='<tr><td colspan="4" style="color:var(--muted);text-align:center;padding:2rem;">Waiting for blocks...</td></tr>';
+    return;
+  }
   tb.innerHTML = blocks.map(b=>`
     <tr>
-      <td style="font-weight:600;color:var(--gold);">#${b.height}</td>
+      <td style="font-weight:600;color:var(--gold);">#${b.height.toLocaleString()}</td>
       <td class="hash-cell">${sh(b.hash)}</td>
       <td style="color:${b.txs>0?'var(--green)':'var(--muted)'};">${b.txs}</td>
-      <td style="color:var(--muted);">${b.base_fee} Spark</td>
+      <td style="color:var(--muted);">${b.base_fee} Spark/KB</td>
     </tr>
   `).join('');
 }
@@ -775,20 +751,23 @@ async function updateValidators() {
     const data = await rpc('indra_getValidatorSet');
     const grid = document.getElementById('validators-grid');
     grid.innerHTML = data.validators.map(v => {
-      const name = v.name || VNAMES[v.validator_id] || 'unknown';
+      const name = v.name || vname(v.validator_id) || 'unknown';
+      const stakeIndra = (Number(v.stake)/1e8).toFixed(0);
+      const commission = v.commission_bps != null ? (v.commission_bps/100).toFixed(0)+'%' : '10%';
+      const statusClass = v.status === 'active' ? 'status-active' : '';
       return `
         <div class="val-card">
           <div class="val-name"><span class="v-badge v-${name}" style="font-size:0.75rem;padding:0.25rem 0.75rem;">${name}</span></div>
           <div class="val-id">${v.validator_id}</div>
-          <div class="val-row"><span class="val-row-label">Stake</span><span class="val-row-val">${(Number(v.stake)/1e8).toFixed(0)} INDRA</span></div>
-          <div class="val-row"><span class="val-row-label">Status</span><span class="val-row-val status-active">● ${v.status}</span></div>
-          <div class="val-row"><span class="val-row-label">Commission</span><span class="val-row-val">${(v.commission_bps/100).toFixed(0)}%</span></div>
-          <div class="val-row"><span class="val-row-label">Epoch Joined</span><span class="val-row-val">${v.epoch_joined}</span></div>
+          <div class="val-row"><span class="val-row-label">Stake</span><span class="val-row-val">${stakeIndra} INDRA</span></div>
+          <div class="val-row"><span class="val-row-label">Status</span><span class="val-row-val ${statusClass}">● ${v.status || 'active'}</span></div>
+          <div class="val-row"><span class="val-row-label">Commission</span><span class="val-row-val">${commission}</span></div>
+          <div class="val-row"><span class="val-row-label">Epoch Joined</span><span class="val-row-val">${v.epoch_joined ?? 0}</span></div>
         </div>
       `;
     }).join('');
   } catch(e) {
-    document.getElementById('validators-grid').innerHTML='<div class="loading">Failed to load validators</div>';
+    document.getElementById('validators-grid').innerHTML='<div class="loading">Failed to load validators — '+e.message+'</div>';
   }
 }
 
@@ -797,12 +776,14 @@ async function lookupBalance() {
   const errEl = document.getElementById('lookup-err');
   const resEl = document.getElementById('lookup-result');
   errEl.textContent=''; resEl.classList.remove('show');
-  if(!addr||addr.length<10){errEl.textContent='Enter a valid address.';return;}
+  if(!addr || addr.length < 10) { errEl.textContent='Enter a valid address (64-character hex).'; return; }
   try {
     const data = await rpc('indra_getBalance',[addr]);
+    // indra_getBalance returns {address, balance_spark, utxo_count}
+    const bal = data.balance_spark ?? data.balance ?? 0;
     document.getElementById('lr-address').textContent = addr;
-    document.getElementById('lr-balance').textContent = (Number(data.balance)/1e8).toFixed(8)+' INDRA';
-    document.getElementById('lr-spark').textContent = Number(data.balance).toLocaleString()+' Spark';
+    document.getElementById('lr-balance').textContent = (Number(bal)/1e8).toFixed(8)+' INDRA';
+    document.getElementById('lr-spark').textContent = Number(bal).toLocaleString()+' Spark';
     resEl.classList.add('show');
   } catch(e) { errEl.textContent='Error: '+e.message; }
 }
@@ -821,8 +802,20 @@ function switchTab(name) {
   });
 }
 
+function switchInstall(panel) {
+  document.querySelectorAll('.install-tab').forEach((t,i)=>{
+    t.classList.toggle('active',['validator','observer'][i]===panel);
+  });
+  document.querySelectorAll('.install-panel').forEach(p=>{
+    p.classList.toggle('active',p.id==='panel-'+panel);
+  });
+  document.getElementById('install-titlebar-label').textContent =
+    panel === 'validator' ? 'bash — indra-validator' : 'bash — indra-observer';
+}
+
 function copyInstall() {
-  const txt = `curl -sSf https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh | bash\nindra-keygen --name yourname --output ~/.indra/data/keys.json\nindra-node --data-dir ~/.indra/data --genesis ~/.indra/data/genesis.toml --keys ~/.indra/data/keys.json --bootstrap-peers 116.203.185.28:30303`;
+  const activePanel = document.querySelector('.install-panel.active');
+  const txt = activePanel ? activePanel.innerText.replace(/\n{3,}/g,'\n\n').trim() : '';
   navigator.clipboard.writeText(txt).then(()=>{
     const btn=document.querySelector('.copy-btn');
     btn.textContent='Copied!';
@@ -832,8 +825,8 @@ function copyInstall() {
 
 updateChain();
 updateValidators();
-setInterval(updateChain,6000);
-setInterval(updateValidators,30000);
+setInterval(updateChain, 6000);
+setInterval(updateValidators, 30000);
 </script>
 </body>
 </html>

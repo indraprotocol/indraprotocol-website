@@ -506,21 +506,21 @@
       <div class="lookup-err" id="lookup-err"></div>
       <div class="addr-shortcuts">
         <div style="font-family:monospace;font-size:0.5625rem;color:var(--gold-dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.375rem;">Genesis Validators</div>
-        <div class="addr-row" onclick="setAddr('8b06a9b035d4d5f4abb5a17ca865fd262113ddf69c3aad06f4f9019f2b964f8e')">
+        <div class="addr-row" onclick="setAddr('8b06a9b0e9e883828ad7f9492060247b068c1530098d409a6f12b81eca4cf490')">
           <span class="v-badge v-buddhi">buddhi</span>
-          <span class="addr-hex">8b06a9b035d4d5f4abb5a17ca865fd262113ddf69c3aad06f4f9019f2b964f8e</span>
+          <span class="addr-hex">8b06a9b0e9e883828ad7f9492060247b068c1530098d409a6f12b81eca4cf490</span>
         </div>
-        <div class="addr-row" onclick="setAddr('3e202b95a1f4d2c8b9e7f3a061d8c4592e1b7f8d3c5a9e2b4f7d1c8a6e3b9f0d')">
+        <div class="addr-row" onclick="setAddr('3e202b95d9b98b695580272b102c5c040ada5d9a4330eb03aa8971a02c29b4a7')">
           <span class="v-badge v-siddhi">siddhi</span>
-          <span class="addr-hex">3e202b95a1f4d2c8b9e7f3a061d8c4592e1b7f8d3c5a9e2b4f7d1c8a6e3b9f0d</span>
+          <span class="addr-hex">3e202b95d9b98b695580272b102c5c040ada5d9a4330eb03aa8971a02c29b4a7</span>
         </div>
-        <div class="addr-row" onclick="setAddr('458c74da2b9f1e3c7a5d8b0f4e6c9a2d1b8f5e3c7a9d2b4f1e6c8a0d3b7f5e2')">
+        <div class="addr-row" onclick="setAddr('458c74da954351ddd15cf906f5cd1bf7cc9fd994f9b026c8ce788b8aa8120d29')">
           <span class="v-badge v-kushal">kushal</span>
-          <span class="addr-hex">458c74da2b9f1e3c7a5d8b0f4e6c9a2d1b8f5e3c7a9d2b4f1e6c8a0d3b7f5e2</span>
+          <span class="addr-hex">458c74da954351ddd15cf906f5cd1bf7cc9fd994f9b026c8ce788b8aa8120d29</span>
         </div>
-        <div class="addr-row" onclick="setAddr('7cf530e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8')">
+        <div class="addr-row" onclick="setAddr('7cf530e0d358a41cc86cb0026c33f4f796af0947dbd2e1c694586559d9918839')">
           <span class="v-badge v-bonkai">bonkai</span>
-          <span class="addr-hex">7cf530e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8</span>
+          <span class="addr-hex">7cf530e0d358a41cc86cb0026c33f4f796af0947dbd2e1c694586559d9918839</span>
         </div>
       </div>
     </div>
@@ -672,15 +672,16 @@ const RPC = 'https://rpc.indraprotocol.com';
 
 // Correct validator IDs (full 64-char hex from genesis keys)
 const VNAMES = {
-  '8b06a9b0': 'buddhi',
-  '7cf530e0': 'bonkai',
-  '3e202b95': 'siddhi',
-  '458c74da': 'kushal'
+  '8b06a9b0e9e883828ad7f9492060247b068c1530098d409a6f12b81eca4cf490': 'buddhi',
+  '7cf530e0d358a41cc86cb0026c33f4f796af0947dbd2e1c694586559d9918839': 'bonkai',
+  '3e202b95d9b98b695580272b102c5c040ada5d9a4330eb03aa8971a02c29b4a7': 'siddhi',
+  '458c74da954351ddd15cf906f5cd1bf7cc9fd994f9b026c8ce788b8aa8120d29': 'kushal'
 };
 
 function vname(id) {
-  const prefix = id.slice(0,8);
-  return VNAMES[prefix] || id.slice(0,8);
+  if(VNAMES[id]) return VNAMES[id];
+  const match = Object.keys(VNAMES).find(k => id.startsWith(k.slice(0,8)));
+  return match ? VNAMES[match] : id.slice(0,8);
 }
 
 async function rpc(method, params=[]) {

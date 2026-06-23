@@ -46,88 +46,29 @@
   }
   .nav-brand { display: flex; align-items: center; gap: 0.875rem; text-decoration: none; }
   .nav-bolt { width: 18px; height: 36px; }
-  .nav-wordmark {
-    font-family: 'Georgia', Georgia, serif;
-    font-size: 1.125rem; letter-spacing: 0.25em;
-    color: var(--text); font-weight: normal;
-  }
+  .nav-wordmark { font-family: 'Georgia', Georgia, serif; font-size: 1.125rem; letter-spacing: 0.25em; color: var(--text); font-weight: normal; }
   .nav-links { display: flex; gap: 2rem; align-items: center; }
-  .nav-links a {
-    color: var(--muted); text-decoration: none;
-    font-size: 0.75rem; font-weight: 500;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    transition: color 0.2s;
-  }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    background: var(--gold) !important; color: var(--black) !important;
-    padding: 0.5rem 1.25rem !important; border-radius: 4px; font-weight: 600 !important;
-  }
+  .nav-cta { background: var(--gold) !important; color: var(--black) !important; padding: 0.5rem 1.25rem !important; border-radius: 4px; font-weight: 600 !important; }
   .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
 
   /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(232,168,32,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(232,168,32,0.06) 0%, transparent 70%); pointer-events: none; }
   .hero-logo { width: 60px; height: 120px; margin-bottom: 2.5rem; position: relative; z-index: 1; }
-  .hero-wordmark {
-    font-family: 'Georgia', Georgia, serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    letter-spacing: 0.4em; color: var(--text); font-weight: normal;
-    margin-bottom: 0.5rem; position: relative; z-index: 1;
-  }
-  .hero-sub-wordmark {
-    font-size: 0.6875rem; letter-spacing: 0.3em;
-    text-transform: uppercase; color: var(--muted);
-    margin-bottom: 2.5rem; position: relative; z-index: 1;
-  }
-  .hero-divider {
-    width: 120px; height: 0.5px;
-    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
-    margin: 0 auto 2.5rem; position: relative; z-index: 1;
-  }
-  .hero-desc {
-    max-width: 520px; color: var(--muted); font-size: 0.9375rem;
-    line-height: 1.8; margin-bottom: 3rem; position: relative; z-index: 1;
-  }
-  .hero-actions {
-    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
-    position: relative; z-index: 1;
-  }
-  .btn-primary {
-    background: var(--gold); color: var(--black);
-    padding: 0.875rem 2.5rem; border-radius: 4px;
-    font-size: 0.6875rem; font-weight: 600; text-decoration: none;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    transition: background 0.2s, transform 0.1s; display: inline-block;
-    border: 0.5px solid var(--gold-dark);
-  }
+  .hero-wordmark { font-family: 'Georgia', Georgia, serif; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: 0.4em; color: var(--text); font-weight: normal; margin-bottom: 0.5rem; position: relative; z-index: 1; }
+  .hero-sub-wordmark { font-size: 0.6875rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.5rem; position: relative; z-index: 1; }
+  .hero-divider { width: 120px; height: 0.5px; background: linear-gradient(90deg, transparent, var(--gold-dim), transparent); margin: 0 auto 2.5rem; position: relative; z-index: 1; }
+  .hero-desc { max-width: 520px; color: var(--muted); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 3rem; position: relative; z-index: 1; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; }
+  .btn-primary { background: var(--gold); color: var(--black); padding: 0.875rem 2.5rem; border-radius: 4px; font-size: 0.6875rem; font-weight: 600; text-decoration: none; letter-spacing: 0.15em; text-transform: uppercase; transition: background 0.2s, transform 0.1s; display: inline-block; border: 0.5px solid var(--gold-dark); }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-  .btn-secondary {
-    background: transparent; color: var(--gold);
-    padding: 0.875rem 2.5rem; border-radius: 4px;
-    border: 0.5px solid var(--gold-dim);
-    font-size: 0.6875rem; font-weight: 500; text-decoration: none;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    transition: border-color 0.2s, transform 0.1s; display: inline-block;
-  }
+  .btn-secondary { background: transparent; color: var(--gold); padding: 0.875rem 2.5rem; border-radius: 4px; border: 0.5px solid var(--gold-dim); font-size: 0.6875rem; font-weight: 500; text-decoration: none; letter-spacing: 0.15em; text-transform: uppercase; transition: border-color 0.2s, transform 0.1s; display: inline-block; }
   .btn-secondary:hover { border-color: var(--gold); transform: translateY(-1px); }
 
-  /* LIVE TICKER */
-  .ticker {
-    background: var(--surface);
-    border-top: 0.5px solid var(--border);
-    border-bottom: 0.5px solid var(--border);
-    padding: 1rem 2.5rem;
-    display: flex; gap: 3rem; overflow-x: auto; scrollbar-width: none;
-  }
+  /* TICKER */
+  .ticker { background: var(--surface); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); padding: 1rem 2.5rem; display: flex; gap: 3rem; overflow-x: auto; scrollbar-width: none; }
   .ticker::-webkit-scrollbar { display: none; }
   .ticker-item { display: flex; flex-direction: column; gap: 0.25rem; white-space: nowrap; }
   .ticker-label { font-size: 0.5625rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dim); font-family: monospace; }
@@ -137,25 +78,13 @@
 
   /* SECTION */
   section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--gold-dim); font-family: monospace;
-    display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
-  }
+  .section-label { font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dim); font-family: monospace; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
   .section-label::after { content: ''; flex: 1; height: 0.5px; background: var(--faint); }
-  h2 {
-    font-family: 'Georgia', Georgia, serif;
-    font-size: clamp(1.75rem, 4vw, 2.75rem);
-    font-weight: normal; letter-spacing: 0.05em;
-    margin-bottom: 0.75rem; line-height: 1.2;
-  }
+  h2 { font-family: 'Georgia', Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: normal; letter-spacing: 0.05em; margin-bottom: 0.75rem; line-height: 1.2; }
   .section-sub { color: var(--muted); font-size: 0.9375rem; max-width: 480px; margin-bottom: 3rem; line-height: 1.7; }
 
   /* FEATURES */
-  .features-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 0.5px; background: var(--border); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden;
-  }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.5px; background: var(--border); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; }
   .feature-card { background: var(--card); padding: 1.75rem; transition: background 0.2s; }
   .feature-card:hover { background: var(--surface); }
   .feature-num { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); letter-spacing: 0.15em; margin-bottom: 1rem; }
@@ -164,22 +93,12 @@
 
   /* EXPLORER */
   .explorer-wrap { background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; }
-  .explorer-topbar {
-    background: var(--surface); padding: 0.875rem 1.5rem;
-    display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 0.5px solid var(--border); flex-wrap: wrap; gap: 0.75rem;
-  }
+  .explorer-topbar { background: var(--surface); padding: 0.875rem 1.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 0.5px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
   .explorer-topbar-title { font-family: monospace; font-size: 0.6875rem; color: var(--muted); letter-spacing: 0.08em; }
-  .live-pill {
-    display: flex; align-items: center; gap: 0.375rem;
-    font-family: monospace; font-size: 0.5625rem; letter-spacing: 0.1em;
-    color: var(--green); text-transform: uppercase;
-    background: rgba(90,186,90,0.08); border: 0.5px solid rgba(90,186,90,0.2);
-    padding: 0.25rem 0.625rem; border-radius: 2px;
-  }
+  .live-pill { display: flex; align-items: center; gap: 0.375rem; font-family: monospace; font-size: 0.5625rem; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; background: rgba(90,186,90,0.08); border: 0.5px solid rgba(90,186,90,0.2); padding: 0.25rem 0.625rem; border-radius: 2px; }
   .live-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  .chain-stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); border-bottom: 0.5px solid var(--border); }
+  .chain-stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); border-bottom: 0.5px solid var(--border); }
   .cs-item { padding: 1rem 1.25rem; border-right: 0.5px solid var(--border); }
   .cs-item:last-child { border-right: none; }
   .cs-label { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.375rem; }
@@ -187,12 +106,7 @@
   .cs-val.normal { color: var(--text); }
   .tab-bar { display: flex; border-bottom: 0.5px solid var(--border); overflow-x: auto; scrollbar-width: none; }
   .tab-bar::-webkit-scrollbar { display: none; }
-  .tab-btn {
-    background: none; border: none; color: var(--muted);
-    padding: 0.75rem 1.5rem; font-family: monospace; font-size: 0.6875rem;
-    cursor: pointer; border-bottom: 1px solid transparent;
-    transition: all 0.2s; white-space: nowrap; letter-spacing: 0.08em; text-transform: uppercase;
-  }
+  .tab-btn { background: none; border: none; color: var(--muted); padding: 0.75rem 1.5rem; font-family: monospace; font-size: 0.6875rem; cursor: pointer; border-bottom: 1px solid transparent; transition: all 0.2s; white-space: nowrap; letter-spacing: 0.08em; text-transform: uppercase; }
   .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
   .tab-btn:hover:not(.active) { color: var(--text); }
   .tab-content { display: none; padding: 1.5rem; }
@@ -203,10 +117,7 @@
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: var(--surface); }
   .hash-cell { color: var(--gold); font-size: 0.625rem; }
-  .v-badge {
-    display: inline-block; padding: 0.125rem 0.5rem; border-radius: 2px;
-    font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-  }
+  .v-badge { display: inline-block; padding: 0.125rem 0.5rem; border-radius: 2px; font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
   .v-buddhi { background: rgba(232,168,32,0.12); color: var(--gold); border: 0.5px solid rgba(232,168,32,0.2); }
   .v-siddhi { background: rgba(90,186,90,0.12); color: var(--green); border: 0.5px solid rgba(90,186,90,0.2); }
   .v-kushal  { background: rgba(100,160,220,0.12); color: var(--blue); border: 0.5px solid rgba(100,160,220,0.2); }
@@ -214,21 +125,10 @@
 
   /* LOOKUP */
   .lookup-row { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
-  .lookup-input {
-    flex: 1; min-width: 200px;
-    background: var(--surface); border: 0.5px solid var(--border);
-    color: var(--text); padding: 0.75rem 1rem;
-    font-family: monospace; font-size: 0.6875rem; border-radius: 4px; outline: none;
-    transition: border-color 0.2s;
-  }
+  .lookup-input { flex: 1; min-width: 200px; background: var(--surface); border: 0.5px solid var(--border); color: var(--text); padding: 0.75rem 1rem; font-family: monospace; font-size: 0.6875rem; border-radius: 4px; outline: none; transition: border-color 0.2s; }
   .lookup-input:focus { border-color: var(--gold-dim); }
   .lookup-input::placeholder { color: var(--muted); }
-  .lookup-go {
-    background: var(--gold); color: var(--black); border: none;
-    padding: 0.75rem 1.5rem; font-family: monospace; font-size: 0.6875rem;
-    font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-    border-radius: 4px; cursor: pointer; transition: background 0.2s;
-  }
+  .lookup-go { background: var(--gold); color: var(--black); border: none; padding: 0.75rem 1.5rem; font-family: monospace; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 4px; cursor: pointer; transition: background 0.2s; }
   .lookup-go:hover { background: var(--gold-light); }
   .lookup-result { background: var(--surface); border: 0.5px solid var(--border); padding: 1.25rem; border-radius: 4px; display: none; }
   .lookup-result.show { display: block; }
@@ -236,21 +136,14 @@
   .lr-val { font-family: monospace; color: var(--text); margin-bottom: 1rem; font-size: 0.8125rem; word-break: break-all; }
   .lr-val.big { font-size: 1.5rem; color: var(--gold); font-weight: 600; margin-bottom: 0.25rem; }
   .addr-shortcuts { display: flex; flex-direction: column; gap: 0.375rem; margin-top: 1.25rem; }
-  .addr-row {
-    display: flex; align-items: center; gap: 0.75rem;
-    padding: 0.5rem 0.75rem; background: var(--surface); border: 0.5px solid var(--border);
-    border-radius: 4px; cursor: pointer; transition: border-color 0.2s;
-  }
+  .addr-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0.75rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 4px; cursor: pointer; transition: border-color 0.2s; }
   .addr-row:hover { border-color: var(--gold-dim); }
   .addr-hex { font-family: monospace; font-size: 0.5625rem; color: var(--muted); word-break: break-all; }
   .lookup-err { font-family: monospace; font-size: 0.6875rem; color: var(--red); margin-top: 0.5rem; }
 
   /* VALIDATORS */
   .validators-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
-  .val-card {
-    background: var(--card); border: 0.5px solid var(--border); border-radius: 6px;
-    padding: 1.25rem; transition: border-color 0.2s;
-  }
+  .val-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; padding: 1.25rem; transition: border-color 0.2s; }
   .val-card:hover { border-color: var(--gold-dim); }
   .val-name { font-family: 'Georgia', Georgia, serif; font-size: 1.25rem; margin-bottom: 0.375rem; }
   .val-id { font-family: monospace; font-size: 0.5rem; color: var(--muted); margin-bottom: 1rem; word-break: break-all; line-height: 1.6; }
@@ -259,41 +152,80 @@
   .val-row-val { font-family: monospace; font-size: 0.6875rem; font-weight: 600; }
   .status-active { color: var(--green); }
 
+  /* EPOCH HISTORY */
+  .epoch-table-wrap { background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .epoch-header { background: var(--surface); padding: 0.875rem 1.5rem; border-bottom: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .epoch-header-title { font-family: monospace; font-size: 0.6875rem; color: var(--muted); letter-spacing: 0.08em; }
+  .epoch-stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); border-bottom: 0.5px solid var(--border); }
+  .epoch-stat { padding: 1rem 1.25rem; border-right: 0.5px solid var(--border); }
+  .epoch-stat:last-child { border-right: none; }
+  .epoch-stat-label { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.375rem; }
+  .epoch-stat-val { font-family: monospace; font-size: 1rem; font-weight: 600; color: var(--gold); }
+  .epoch-stat-val.normal { color: var(--text); }
+  .epoch-row-item { padding: 1rem 1.5rem; border-bottom: 0.5px solid var(--faint); display: grid; grid-template-columns: 60px 1fr 1fr 1fr 80px; gap: 1rem; align-items: center; font-family: monospace; font-size: 0.6875rem; transition: background 0.15s; }
+  .epoch-row-item:last-child { border-bottom: none; }
+  .epoch-row-item:hover { background: var(--surface); }
+  .epoch-num { color: var(--gold); font-weight: 600; }
+  .epoch-heights { color: var(--muted); font-size: 0.5625rem; }
+  .epoch-reward { color: var(--text); }
+  .epoch-slash { color: var(--red); }
+  .epoch-slash.none { color: var(--muted); }
+  .epoch-ts { color: var(--muted); font-size: 0.5625rem; }
+  .epoch-list-header { padding: 0.5rem 1.5rem; display: grid; grid-template-columns: 60px 1fr 1fr 1fr 80px; gap: 1rem; font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 0.5px solid var(--border); background: var(--surface); }
+
+  /* GOVERNANCE */
+  .gov-params-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5px; background: var(--border); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 2rem; }
+  .gov-param { background: var(--card); padding: 1rem 1.25rem; }
+  .gov-param-label { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.375rem; }
+  .gov-param-val { font-family: monospace; font-size: 0.9375rem; font-weight: 600; color: var(--text); }
+  .gov-param-note { font-family: monospace; font-size: 0.5rem; color: var(--muted); margin-top: 0.25rem; }
+  .proposals-wrap { background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .proposals-header { background: var(--surface); padding: 0.875rem 1.5rem; border-bottom: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .proposals-title { font-family: monospace; font-size: 0.6875rem; color: var(--muted); letter-spacing: 0.08em; }
+  .no-proposals { padding: 3rem 1.5rem; text-align: center; }
+  .no-proposals-icon { font-size: 2rem; margin-bottom: 1rem; opacity: 0.3; }
+  .no-proposals-text { font-family: monospace; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.08em; }
+  .proposal-card { padding: 1.25rem 1.5rem; border-bottom: 0.5px solid var(--faint); }
+  .proposal-card:last-child { border-bottom: none; }
+  .proposal-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+  .proposal-title { font-size: 0.9375rem; font-weight: 600; }
+  .proposal-phase { font-family: monospace; font-size: 0.5625rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.625rem; border-radius: 2px; }
+  .phase-deliberation { background: rgba(120,170,220,0.1); color: var(--blue); border: 0.5px solid rgba(120,170,220,0.2); }
+  .phase-commit { background: rgba(232,168,32,0.1); color: var(--gold); border: 0.5px solid rgba(232,168,32,0.2); }
+  .phase-reveal { background: rgba(232,168,32,0.15); color: var(--gold-light); border: 0.5px solid rgba(232,168,32,0.3); }
+  .phase-execdelay { background: rgba(90,186,90,0.1); color: var(--green); border: 0.5px solid rgba(90,186,90,0.2); }
+  .phase-executed { background: rgba(90,186,90,0.08); color: var(--green); border: 0.5px solid rgba(90,186,90,0.15); }
+  .phase-failed { background: rgba(218,90,90,0.1); color: var(--red); border: 0.5px solid rgba(218,90,90,0.2); }
+  .proposal-meta { font-family: monospace; font-size: 0.5625rem; color: var(--muted); margin-bottom: 0.75rem; }
+  .proposal-vote-bar { height: 4px; background: var(--faint); border-radius: 2px; margin-bottom: 0.5rem; overflow: hidden; display: flex; }
+  .vote-yes { background: var(--green); }
+  .vote-no { background: var(--red); }
+  .vote-abstain { background: var(--muted); }
+  .proposal-vote-labels { display: flex; gap: 1.5rem; font-family: monospace; font-size: 0.5625rem; }
+  .vote-label-yes { color: var(--green); }
+  .vote-label-no { color: var(--red); }
+  .vote-label-abs { color: var(--muted); }
+
   /* INSTALL */
-  .install-tabs { display: flex; gap: 0.5rem; margin-bottom: 0; }
-  .install-tab {
-    background: var(--faint); border: 0.5px solid var(--border);
-    color: var(--muted); padding: 0.5rem 1.25rem;
-    font-family: monospace; font-size: 0.6875rem; cursor: pointer;
-    border-bottom: none; border-radius: 4px 4px 0 0; letter-spacing: 0.08em;
-    text-transform: uppercase; transition: all 0.2s;
-  }
-  .install-tab.active { background: var(--card); color: var(--gold); border-color: var(--border); }
-  .install-box { background: var(--card); border: 0.5px solid var(--border); border-radius: 0 6px 6px 6px; overflow: hidden; }
-  .install-titlebar {
-    background: var(--surface); padding: 0.625rem 1rem;
-    display: flex; align-items: center; gap: 0.5rem; border-bottom: 0.5px solid var(--border);
-  }
+  .install-box { background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 2rem; }
+  .install-titlebar { background: var(--surface); padding: 0.625rem 1rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 0.5px solid var(--border); }
   .dot { width: 10px; height: 10px; border-radius: 50%; }
   .install-body { padding: 1.5rem; font-family: monospace; font-size: 0.75rem; line-height: 2; overflow-x: auto; }
-  .install-panel { display: none; }
-  .install-panel.active { display: block; }
   .c { color: var(--muted); }
   .cmd { color: var(--gold); }
   .flag { color: var(--blue); }
-  .val-c { color: var(--green); }
-  .copy-btn {
-    margin-left: auto; background: transparent; border: 0.5px solid var(--border);
-    color: var(--muted); padding: 0.25rem 0.75rem; border-radius: 2px;
-    font-family: monospace; font-size: 0.5625rem; cursor: pointer; letter-spacing: 0.08em;
-    text-transform: uppercase; transition: all 0.2s;
-  }
+  .val { color: var(--green); }
+  .copy-btn { margin-left: auto; background: transparent; border: 0.5px solid var(--border); color: var(--muted); padding: 0.25rem 0.75rem; border-radius: 2px; font-family: monospace; font-size: 0.5625rem; cursor: pointer; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.2s; }
   .copy-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
-  .info-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.5px; background: var(--border); border: 0.5px solid var(--border);
-    border-radius: 6px; overflow: hidden; margin-top: 2rem;
-  }
+
+  /* NODE TABS */
+  .node-tab-bar { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+  .node-tab-btn { background: transparent; border: 0.5px solid var(--border); color: var(--muted); padding: 0.5rem 1.25rem; font-family: monospace; font-size: 0.6875rem; cursor: pointer; border-radius: 4px; transition: all 0.2s; letter-spacing: 0.08em; text-transform: uppercase; }
+  .node-tab-btn.active { background: var(--gold); color: var(--black); border-color: var(--gold); font-weight: 600; }
+  .node-tab-content { display: none; }
+  .node-tab-content.active { display: block; }
+
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5px; background: var(--border); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 2rem; }
   .info-item { background: var(--card); padding: 1.25rem; }
   .info-label { font-family: monospace; font-size: 0.5625rem; color: var(--gold-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.375rem; }
   .info-val { font-family: monospace; font-size: 0.8125rem; color: var(--text); word-break: break-all; }
@@ -306,20 +238,13 @@
   .app-icon { font-size: 1.5rem; margin-bottom: 0.875rem; }
   .app-title { font-size: 0.9375rem; font-weight: 600; margin-bottom: 0.375rem; }
   .app-desc { font-size: 0.8125rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
-  .pill {
-    display: inline-block; font-family: monospace; font-size: 0.5625rem;
-    padding: 0.25rem 0.625rem; border-radius: 2px; letter-spacing: 0.08em; text-transform: uppercase;
-  }
+  .pill { display: inline-block; font-family: monospace; font-size: 0.5625rem; padding: 0.25rem 0.625rem; border-radius: 2px; letter-spacing: 0.08em; text-transform: uppercase; }
   .pill-gold { background: rgba(232,168,32,0.1); color: var(--gold); border: 0.5px solid rgba(232,168,32,0.2); }
   .pill-green { background: rgba(90,186,90,0.1); color: var(--green); border: 0.5px solid rgba(90,186,90,0.2); }
   .pill-blue { background: rgba(120,170,220,0.1); color: var(--blue); border: 0.5px solid rgba(120,170,220,0.2); }
 
   /* FOOTER */
-  footer {
-    border-top: 0.5px solid var(--border); background: var(--surface);
-    padding: 2rem 2.5rem;
-    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-  }
+  footer { border-top: 0.5px solid var(--border); background: var(--surface); padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
   .footer-brand { display: flex; align-items: center; gap: 0.75rem; }
   .footer-wordmark { font-family: 'Georgia', Georgia, serif; font-size: 1rem; letter-spacing: 0.25em; color: var(--text); }
   .footer-links { display: flex; gap: 1.5rem; }
@@ -327,14 +252,6 @@
   .footer-links a:hover { color: var(--gold); }
   .footer-copy { font-family: monospace; font-size: 0.5625rem; color: var(--muted); letter-spacing: 0.1em; }
   .loading { font-family: monospace; font-size: 0.6875rem; color: var(--muted); padding: 1rem 0; }
-
-  @media (max-width: 600px) {
-    nav { padding: 1rem 1.25rem; }
-    .nav-links { gap: 1rem; }
-    section { padding: 3.5rem 1.25rem; }
-    .ticker { gap: 1.5rem; padding: 1rem 1.25rem; }
-    footer { flex-direction: column; align-items: flex-start; }
-  }
 </style>
 </head>
 <body>
@@ -350,7 +267,9 @@
   </a>
   <div class="nav-links">
     <a href="#explorer">Explorer</a>
+    <a href="#epochs">Epochs</a>
     <a href="#validators">Validators</a>
+    <a href="#governance">Governance</a>
     <a href="#docs">Run a Node</a>
     <a href="#apps">Apps</a>
     <a href="https://github.com/jyothisarath096/indra" target="_blank" class="nav-cta">GitHub</a>
@@ -371,47 +290,26 @@
   <div class="hero-divider"></div>
   <p class="hero-desc">BFT consensus with ML-DSA-87 (FIPS 204) signatures. Hybrid post-quantum transport. Confidential UTXOs. Validator-earned rewards. No foundation allocation.</p>
   <div class="hero-actions">
-    <a href="#docs" class="btn-primary">Run a Node</a>
+    <a href="#docs" class="btn-primary">Run a Validator</a>
     <a href="#explorer" class="btn-secondary">View Explorer</a>
   </div>
 </div>
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-item">
-    <span class="ticker-label">Network</span>
-    <span class="ticker-val">indra-testnet-1</span>
-  </div>
+  <div class="ticker-item"><span class="ticker-label">Network</span><span class="ticker-val">indra-testnet-1</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item">
-    <span class="ticker-label">Block Height</span>
-    <span class="ticker-val live" id="t-height">—</span>
-  </div>
+  <div class="ticker-item"><span class="ticker-label">Block Height</span><span class="ticker-val live" id="t-height">—</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item">
-    <span class="ticker-label">Epoch</span>
-    <span class="ticker-val" id="t-epoch">—</span>
-  </div>
+  <div class="ticker-item"><span class="ticker-label">Epoch</span><span class="ticker-val" id="t-epoch">—</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item">
-    <span class="ticker-label">Validators</span>
-    <span class="ticker-val" id="t-validators">—</span>
-  </div>
+  <div class="ticker-item"><span class="ticker-label">Validators</span><span class="ticker-val" id="t-validators">—</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item">
-    <span class="ticker-label">Total Staked</span>
-    <span class="ticker-val" id="t-staked">—</span>
-  </div>
+  <div class="ticker-item"><span class="ticker-label">Total Staked</span><span class="ticker-val" id="t-staked">—</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item">
-    <span class="ticker-label">Block Reward</span>
-    <span class="ticker-val" id="t-reward">—</span>
-  </div>
+  <div class="ticker-item"><span class="ticker-label">Block Reward</span><span class="ticker-val" id="t-reward">—</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item">
-    <span class="ticker-label">Base Fee</span>
-    <span class="ticker-val" id="t-fee">—</span>
-  </div>
+  <div class="ticker-item"><span class="ticker-label">Base Fee</span><span class="ticker-val" id="t-fee">—</span></div>
 </div>
 
 <!-- FEATURES -->
@@ -438,7 +336,7 @@
     <div class="feature-card">
       <div class="feature-num">04</div>
       <div class="feature-title">Confidential UTXOs</div>
-      <div class="feature-desc">Transaction values are hidden in Pedersen commitments with Bulletproof range proofs. Only the fee is public. Nullifiers prevent double-spending without revealing amounts.</div>
+      <div class="feature-desc">Transaction values hidden in Pedersen commitments with Bulletproof range proofs. Only the fee is public. Nullifiers prevent double-spending without revealing amounts.</div>
     </div>
     <div class="feature-card">
       <div class="feature-num">05</div>
@@ -447,8 +345,8 @@
     </div>
     <div class="feature-card">
       <div class="feature-num">06</div>
-      <div class="feature-title">No Foundation Allocation</div>
-      <div class="feature-desc">Genesis supply is distributed to validators only. No team vesting, no foundation reserve. Era 1 block reward: 11.892 INDRA, halving every 4 years. All rewards are validator-earned.</div>
+      <div class="feature-title">On-Chain Governance</div>
+      <div class="feature-desc">Five-phase commit-reveal governance with two-snapshot mechanism. Validators commit hidden votes, reveal publicly, delegators realign stake. Parameter changes require supermajority.</div>
     </div>
   </div>
 </section>
@@ -464,44 +362,35 @@
       <span class="explorer-topbar-title">rpc.indraprotocol.com</span>
       <div class="live-pill"><span class="live-dot"></span>Live</div>
     </div>
-
     <div class="chain-stats-row">
       <div class="cs-item"><div class="cs-label">Height</div><div class="cs-val" id="cs-height">—</div></div>
-      <div class="cs-item"><div class="cs-label">Epoch</div><div class="cs-val normal" id="cs-epoch">—</div></div>
+      <div class="cs-item"><div class="cs-label">Epoch</div><div class="cs-val" id="cs-epoch">—</div></div>
       <div class="cs-item"><div class="cs-label">Era</div><div class="cs-val normal" id="cs-era">—</div></div>
       <div class="cs-item"><div class="cs-label">Peers</div><div class="cs-val normal" id="cs-peers">—</div></div>
       <div class="cs-item"><div class="cs-label">Mempool</div><div class="cs-val normal" id="cs-mempool">—</div></div>
       <div class="cs-item"><div class="cs-label">Supply</div><div class="cs-val normal" id="cs-supply">—</div></div>
       <div class="cs-item"><div class="cs-label">Tip Hash</div><div class="cs-val normal" id="cs-tip" style="font-size:0.5625rem;">—</div></div>
     </div>
-
     <div class="tab-bar">
       <button class="tab-btn active" onclick="switchTab('blocks')">Recent Blocks</button>
       <button class="tab-btn" onclick="switchTab('lookup')">Address Lookup</button>
     </div>
-
     <div class="tab-content active" id="tab-blocks">
       <div id="blocks-loading" class="loading">Connecting to rpc.indraprotocol.com...</div>
       <table id="blocks-table" style="display:none;">
-        <thead>
-          <tr><th>Height</th><th>Block Hash</th><th>Txs</th><th>Base Fee</th></tr>
-        </thead>
+        <thead><tr><th>Height</th><th>Block Hash</th><th>Txs</th><th>Base Fee</th></tr></thead>
         <tbody id="blocks-body"></tbody>
       </table>
     </div>
-
     <div class="tab-content" id="tab-lookup">
       <div class="lookup-row">
-        <input class="lookup-input" id="lookup-addr" placeholder="Enter address (64-char hex classical public key)..." />
+        <input class="lookup-input" id="lookup-addr" placeholder="Enter address (64-char hex)..." />
         <button class="lookup-go" onclick="lookupBalance()">Lookup</button>
       </div>
       <div class="lookup-result" id="lookup-result">
-        <div class="lr-label">Address</div>
-        <div class="lr-val" id="lr-address">—</div>
-        <div class="lr-label">Balance</div>
-        <div class="lr-val big" id="lr-balance">—</div>
-        <div class="lr-label">Spark</div>
-        <div class="lr-val" id="lr-spark">—</div>
+        <div class="lr-label">Address</div><div class="lr-val" id="lr-address">—</div>
+        <div class="lr-label">Balance</div><div class="lr-val big" id="lr-balance">—</div>
+        <div class="lr-label">Spark</div><div class="lr-val" id="lr-spark">—</div>
       </div>
       <div class="lookup-err" id="lookup-err"></div>
       <div class="addr-shortcuts">
@@ -527,6 +416,31 @@
   </div>
 </section>
 
+<!-- EPOCH HISTORY -->
+<section id="epochs">
+  <div class="section-label">Epoch History</div>
+  <h2>Reward distribution by epoch.</h2>
+  <p class="section-sub">Each epoch is 300 blocks (~30 minutes). Block rewards are distributed to validators at every epoch boundary.</p>
+
+  <div class="epoch-table-wrap">
+    <div class="epoch-header">
+      <span class="epoch-header-title">epochs.log — indra-testnet-1</span>
+      <div class="live-pill"><span class="live-dot"></span>Live</div>
+    </div>
+    <div class="epoch-stats-row">
+      <div class="epoch-stat"><div class="epoch-stat-label">Latest Epoch</div><div class="epoch-stat-val" id="ep-latest">—</div></div>
+      <div class="epoch-stat"><div class="epoch-stat-label">Total Rewards Paid</div><div class="epoch-stat-val" id="ep-total-rewards">—</div></div>
+      <div class="epoch-stat"><div class="epoch-stat-label">Era 1 Reward / Block</div><div class="epoch-stat-val normal">11.892 INDRA</div></div>
+      <div class="epoch-stat"><div class="epoch-stat-label">Rewards / Epoch</div><div class="epoch-stat-val normal">3,567.6 INDRA</div></div>
+      <div class="epoch-stat"><div class="epoch-stat-label">Total Slashed</div><div class="epoch-stat-val normal" id="ep-total-slashed">—</div></div>
+    </div>
+    <div class="epoch-list-header">
+      <span>Epoch</span><span>Heights</span><span>Rewards</span><span>Validators</span><span>Slashed</span>
+    </div>
+    <div id="epoch-list"><div class="loading" style="padding:2rem 1.5rem;">Loading epoch history...</div></div>
+  </div>
+</section>
+
 <!-- VALIDATORS -->
 <section id="validators">
   <div class="section-label">Validators</div>
@@ -537,82 +451,94 @@
   </div>
 </section>
 
+<!-- GOVERNANCE -->
+<section id="governance">
+  <div class="section-label">Governance</div>
+  <h2>On-chain protocol governance.</h2>
+  <p class="section-sub">Five-phase commit-reveal governance. Validators commit hidden votes, reveal publicly, delegators realign stake before the final tally.</p>
+
+  <div class="gov-params-grid" id="gov-params-grid">
+    <div class="loading" style="padding:1rem;">Loading governance parameters...</div>
+  </div>
+
+  <div class="proposals-wrap">
+    <div class="proposals-header">
+      <span class="proposals-title">Active &amp; Recent Proposals</span>
+      <div class="live-pill"><span class="live-dot"></span>Live</div>
+    </div>
+    <div id="proposals-list">
+      <div class="loading" style="padding:2rem 1.5rem;">Loading proposals...</div>
+    </div>
+  </div>
+</section>
+
 <!-- DOCS -->
 <section id="docs">
   <div class="section-label">Documentation</div>
   <h2>Join the network.</h2>
   <p class="section-sub">Run a validator to earn block rewards, or run a full observer node to sync the chain independently and serve your own RPC.</p>
 
-  <div class="install-tabs">
-    <button class="install-tab active" onclick="switchInstall('validator')">Validator Node</button>
-    <button class="install-tab" onclick="switchInstall('observer')">Observer Node</button>
+  <div class="node-tab-bar">
+    <button class="node-tab-btn active" onclick="switchNodeTab('validator')">Validator Node</button>
+    <button class="node-tab-btn" onclick="switchNodeTab('observer')">Observer Node</button>
   </div>
 
-  <div class="install-box">
-    <div class="install-titlebar">
-      <span class="dot" style="background:#ff5f57;"></span>
-      <span class="dot" style="background:#febc2e;"></span>
-      <span class="dot" style="background:#28c840;"></span>
-      <span style="font-family:monospace;font-size:0.5625rem;color:var(--muted);margin-left:0.5rem;letter-spacing:0.08em;" id="install-titlebar-label">bash — indra-validator</span>
-      <button class="copy-btn" onclick="copyInstall()">Copy</button>
-    </div>
-
-    <div class="install-panel active" id="panel-validator">
+  <div class="node-tab-content active" id="nodetab-validator">
+    <div class="install-box">
+      <div class="install-titlebar">
+        <span class="dot" style="background:#ff5f57;"></span>
+        <span class="dot" style="background:#febc2e;"></span>
+        <span class="dot" style="background:#28c840;"></span>
+        <span style="font-family:monospace;font-size:0.5625rem;color:var(--muted);margin-left:0.5rem;letter-spacing:0.08em;">bash — indra-validator</span>
+        <button class="copy-btn" onclick="copyInstall('validator')">Copy</button>
+      </div>
       <div class="install-body">
         <span class="c"># Download and install INDRA</span><br>
-        <span class="cmd">curl</span> <span class="flag">-sSf</span> <span class="val-c">https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh</span> | bash<br><br>
+        <span class="cmd">curl</span> <span class="flag">-sSf</span> <span class="val">https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh</span> | bash<br><br>
         <span class="c"># Generate your validator keys (saves to keys.json)</span><br>
-        <span class="cmd">indra-keygen</span> <span class="flag">--name</span> <span class="val-c">yourname</span> <span class="flag">--output</span> ~/.indra/data/keys.json<br><br>
+        <span class="cmd">indra-keygen</span> <span class="flag">--name</span> <span class="val">yourname</span> <span class="flag">--output</span> ~/.indra/data/keys.json<br><br>
+        <span class="c"># Generate config.toml interactively</span><br>
+        <span class="cmd">indra-node</span> <span class="flag">--init</span><br><br>
         <span class="c"># Start your validator node</span><br>
-        <span class="cmd">indra-node</span> <span class="flag">--data-dir</span> ~/.indra/data \<br>
-        &nbsp;&nbsp;<span class="flag">--genesis</span> ~/.indra/data/genesis.toml \<br>
-        &nbsp;&nbsp;<span class="flag">--keys</span> ~/.indra/data/keys.json \<br>
-        &nbsp;&nbsp;<span class="flag">--rpc-addr</span> <span class="val-c">0.0.0.0:8545</span> \<br>
-        &nbsp;&nbsp;<span class="flag">--bootstrap-peers</span> <span class="val-c">116.203.185.28:30303</span><br><br>
-        <span class="c"># Register as a validator and self-stake a UTXO</span><br>
-        <span class="cmd">indra-stake</span> register <span class="flag">--keys</span> ~/.indra/data/keys.json <span class="flag">--commission</span> <span class="val-c">1000</span><br>
-        <span class="cmd">indra-stake</span> self-stake <span class="flag">--keys</span> ~/.indra/data/keys.json <span class="flag">--utxo</span> <span class="val-c">&lt;utxo_id&gt;</span>
+        <span class="cmd">indra-node</span> <span class="flag">--config</span> ~/.indra/data/config.toml<br><br>
+        <span class="c"># Register as a validator and self-stake</span><br>
+        <span class="cmd">indra-stake</span> register <span class="flag">--keys</span> ~/.indra/data/keys.json <span class="flag">--commission</span> <span class="val">1000</span><br>
+        <span class="cmd">indra-stake</span> self-stake <span class="flag">--keys</span> ~/.indra/data/keys.json <span class="flag">--utxo</span> <span class="val">&lt;utxo_id&gt;</span>
       </div>
     </div>
+  </div>
 
-    <div class="install-panel" id="panel-observer">
+  <div class="node-tab-content" id="nodetab-observer">
+    <div class="install-box">
+      <div class="install-titlebar">
+        <span class="dot" style="background:#ff5f57;"></span>
+        <span class="dot" style="background:#febc2e;"></span>
+        <span class="dot" style="background:#28c840;"></span>
+        <span style="font-family:monospace;font-size:0.5625rem;color:var(--muted);margin-left:0.5rem;letter-spacing:0.08em;">bash — indra-observer</span>
+        <button class="copy-btn" onclick="copyInstall('observer')">Copy</button>
+      </div>
       <div class="install-body">
         <span class="c"># Download and install INDRA</span><br>
-        <span class="cmd">curl</span> <span class="flag">-sSf</span> <span class="val-c">https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh</span> | bash<br><br>
+        <span class="cmd">curl</span> <span class="flag">-sSf</span> <span class="val">https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh</span> | bash<br><br>
         <span class="c"># Start an observer node — no keys required</span><br>
         <span class="cmd">indra-observer</span> \<br>
         &nbsp;&nbsp;<span class="flag">--data-dir</span> ~/.indra/observer \<br>
-        &nbsp;&nbsp;<span class="flag">--genesis</span> ~/.indra/data/genesis.toml \<br>
-        &nbsp;&nbsp;<span class="flag">--connect</span> <span class="val-c">116.203.185.28:30304</span> \<br>
-        &nbsp;&nbsp;<span class="flag">--rpc-addr</span> <span class="val-c">127.0.0.1:8546</span><br><br>
+        &nbsp;&nbsp;<span class="flag">--connect</span> <span class="val">116.203.185.28:30304</span> \<br>
+        &nbsp;&nbsp;<span class="flag">--rpc-addr</span> <span class="val">127.0.0.1:8546</span><br><br>
         <span class="c"># Query your local observer RPC</span><br>
         <span class="cmd">curl</span> <span class="flag">-s</span> http://127.0.0.1:8546 \<br>
-        &nbsp;&nbsp;<span class="flag">-d</span> <span class="val-c">'{"jsonrpc":"2.0","method":"indra_getChainInfo","params":[],"id":1}'</span>
+        &nbsp;&nbsp;<span class="flag">-d</span> <span class="val">'{"jsonrpc":"2.0","method":"indra_getChainInfo","params":[],"id":1}'</span>
       </div>
     </div>
   </div>
 
   <div class="info-grid">
-    <div class="info-item">
-      <div class="info-label">RPC Endpoint</div>
-      <div class="info-val"><a href="https://rpc.indraprotocol.com" target="_blank">rpc.indraprotocol.com</a></div>
-    </div>
-    <div class="info-item">
-      <div class="info-label">Validator P2P</div>
-      <div class="info-val">116.203.185.28:30303</div>
-    </div>
-    <div class="info-item">
-      <div class="info-label">Observer Port</div>
-      <div class="info-val">116.203.185.28:30304</div>
-    </div>
-    <div class="info-item">
-      <div class="info-label">Chain ID</div>
-      <div class="info-val">indra-testnet-1</div>
-    </div>
-    <div class="info-item">
-      <div class="info-label">Source Code</div>
-      <div class="info-val"><a href="https://github.com/jyothisarath096/indra" target="_blank">github.com/jyothisarath096/indra</a></div>
-    </div>
+    <div class="info-item"><div class="info-label">RPC Endpoint</div><div class="info-val"><a href="https://rpc.indraprotocol.com" target="_blank">rpc.indraprotocol.com</a></div></div>
+    <div class="info-item"><div class="info-label">Validator P2P</div><div class="info-val">116.203.185.28:30303</div></div>
+    <div class="info-item"><div class="info-label">Observer Port</div><div class="info-val">116.203.185.28:30304</div></div>
+    <div class="info-item"><div class="info-label">Chain ID</div><div class="info-val">indra-testnet-1</div></div>
+    <div class="info-item"><div class="info-label">Source Code</div><div class="info-val"><a href="https://github.com/jyothisarath096/indra" target="_blank">github.com/jyothisarath096/indra</a></div></div>
+    <div class="info-item"><div class="info-label">Schema Version</div><div class="info-val" id="schema-ver">—</div></div>
   </div>
 </section>
 
@@ -620,7 +546,7 @@
 <section id="apps">
   <div class="section-label">Apps</div>
   <h2>Native applications.</h2>
-  <p class="section-sub">INDRA ships native iOS and macOS applications with ML-DSA-87 key generation, live chain connectivity, and delegation support.</p>
+  <p class="section-sub">INDRA ships native iOS and macOS applications with ML-DSA-87 key generation, live chain connectivity, delegation, and governance support.</p>
   <div class="apps-grid">
     <div class="app-card">
       <div class="app-icon">📱</div>
@@ -631,19 +557,19 @@
     <div class="app-card">
       <div class="app-icon">💻</div>
       <div class="app-title">Mac App</div>
-      <div class="app-desc">Native macOS. Validator dashboard, live block explorer, delegation management, and staking operations. Connects to local or remote RPC.</div>
+      <div class="app-desc">Native macOS. Validator dashboard, live block explorer, delegation management, governance voting, and staking operations. Connects to local or remote RPC.</div>
       <span class="pill pill-gold">In Development</span>
     </div>
     <div class="app-card">
       <div class="app-icon">⌨️</div>
       <div class="app-title">CLI Tools</div>
-      <div class="app-desc">indra-stake, indra-keygen, indra-observer. Full validator management, delegation, and reward claiming from any Linux or macOS terminal.</div>
+      <div class="app-desc">indra-stake, indra-governance, indra-keygen, indra-observer. Full validator management, delegation, governance proposals, and reward claiming from any terminal.</div>
       <span class="pill pill-green">Live on Testnet</span>
     </div>
     <div class="app-card">
       <div class="app-icon">🌐</div>
       <div class="app-title">Observer Node</div>
-      <div class="app-desc">Run indra-observer to sync the full chain independently. Validates every block. Serves its own local RPC. No keys required. Connect and verify.</div>
+      <div class="app-desc">Run indra-observer to sync the full chain independently. Validates every block. Serves its own local RPC on port 8546. No keys required.</div>
       <span class="pill pill-green">Live on Testnet</span>
     </div>
   </div>
@@ -670,19 +596,12 @@
 <script>
 const RPC = 'https://rpc.indraprotocol.com';
 
-// Correct validator IDs (full 64-char hex from genesis keys)
 const VNAMES = {
   '8b06a9b0e9e883828ad7f9492060247b068c1530098d409a6f12b81eca4cf490': 'buddhi',
-  '7cf530e0d358a41cc86cb0026c33f4f796af0947dbd2e1c694586559d9918839': 'bonkai',
   '3e202b95d9b98b695580272b102c5c040ada5d9a4330eb03aa8971a02c29b4a7': 'siddhi',
-  '458c74da954351ddd15cf906f5cd1bf7cc9fd994f9b026c8ce788b8aa8120d29': 'kushal'
+  '458c74da954351ddd15cf906f5cd1bf7cc9fd994f9b026c8ce788b8aa8120d29': 'kushal',
+  '7cf530e0d358a41cc86cb0026c33f4f796af0947dbd2e1c694586559d9918839': 'bonkai'
 };
-
-function vname(id) {
-  if(VNAMES[id]) return VNAMES[id];
-  const match = Object.keys(VNAMES).find(k => id.startsWith(k.slice(0,8)));
-  return match ? VNAMES[match] : id.slice(0,8);
-}
 
 async function rpc(method, params=[]) {
   const r = await fetch(RPC, {
@@ -696,7 +615,15 @@ async function rpc(method, params=[]) {
 }
 
 function sh(h) { return h ? h.slice(0,8)+'...'+h.slice(-6) : '—'; }
-function spark2indra(s) { return (Number(s)/1e8).toFixed(4)+' INDRA'; }
+function spark(s) { return (Number(s)/1e8).toLocaleString(undefined,{maximumFractionDigits:2})+' INDRA'; }
+function vname(id) { return VNAMES[id] || id.slice(0,8); }
+function vbadge(id) { const n = vname(id); return `<span class="v-badge v-${VNAMES[id]||'buddhi'}">${n}</span>`; }
+function timeAgo(ts) {
+  const s = Math.floor(Date.now()/1000) - ts;
+  if(s < 120) return s+'s ago';
+  if(s < 7200) return Math.floor(s/60)+'m ago';
+  return Math.floor(s/3600)+'h ago';
+}
 
 let blocks = [], lastH = 0;
 
@@ -706,18 +633,18 @@ async function updateChain() {
     document.getElementById('t-height').textContent = info.height.toLocaleString();
     document.getElementById('t-epoch').textContent = info.epoch;
     document.getElementById('t-validators').textContent = info.active_validators;
-    document.getElementById('t-staked').textContent = (Number(info.total_staked_spark)/1e8).toFixed(0)+' INDRA';
+    document.getElementById('t-staked').textContent = spark(info.total_staked_spark);
     document.getElementById('t-reward').textContent = (Number(info.block_reward_spark)/1e8).toFixed(4)+' INDRA';
     document.getElementById('t-fee').textContent = info.base_fee+' Spark/KB';
     document.getElementById('cs-height').textContent = info.height.toLocaleString();
     document.getElementById('cs-epoch').textContent = info.epoch;
     document.getElementById('cs-era').textContent = info.era;
-    document.getElementById('cs-peers').textContent = info.peers ?? '—';
+    document.getElementById('cs-peers').textContent = info.peers;
     document.getElementById('cs-mempool').textContent = info.mempool_size;
-    document.getElementById('cs-supply').textContent = (Number(info.total_supply)/1e8).toFixed(0)+' INDRA';
+    document.getElementById('cs-supply').textContent = (Number(info.total_supply)/1e8).toLocaleString(undefined,{maximumFractionDigits:0})+' INDRA';
     document.getElementById('cs-tip').textContent = sh(info.tip_hash);
     if(info.height !== lastH) {
-      blocks.unshift({height:info.height, hash:info.tip_hash, base_fee:info.base_fee, txs:info.mempool_size||0});
+      blocks.unshift({height:info.height, hash:info.tip_hash, base_fee:info.base_fee, txs:0});
       if(blocks.length>20) blocks.pop();
       lastH = info.height;
       renderBlocks();
@@ -726,17 +653,12 @@ async function updateChain() {
     document.getElementById('blocks-table').style.display='table';
   } catch(e) {
     document.getElementById('blocks-loading').textContent = 'Unable to reach RPC — retrying...';
-    document.getElementById('blocks-loading').style.display='block';
-    document.getElementById('blocks-table').style.display='none';
   }
 }
 
 function renderBlocks() {
   const tb = document.getElementById('blocks-body');
-  if(!blocks.length) {
-    tb.innerHTML='<tr><td colspan="4" style="color:var(--muted);text-align:center;padding:2rem;">Waiting for blocks...</td></tr>';
-    return;
-  }
+  if(!blocks.length) { tb.innerHTML='<tr><td colspan="4" style="color:var(--muted);text-align:center;padding:2rem;">Waiting for blocks...</td></tr>'; return; }
   tb.innerHTML = blocks.map(b=>`
     <tr>
       <td style="font-weight:600;color:var(--gold);">#${b.height.toLocaleString()}</td>
@@ -752,24 +674,140 @@ async function updateValidators() {
     const data = await rpc('indra_getValidatorSet');
     const grid = document.getElementById('validators-grid');
     grid.innerHTML = data.validators.map(v => {
-      const name = v.name || vname(v.validator_id) || 'unknown';
-      const stakeIndra = (Number(v.stake)/1e8).toFixed(0);
-      const commission = v.commission_bps != null ? (v.commission_bps/100).toFixed(0)+'%' : '10%';
-      const statusClass = v.status === 'active' ? 'status-active' : '';
+      const name = v.name || vname(v.validator_id);
+      const pendingINDRA = (Number(v.pending_rewards||0)/1e8).toFixed(4);
       return `
         <div class="val-card">
           <div class="val-name"><span class="v-badge v-${name}" style="font-size:0.75rem;padding:0.25rem 0.75rem;">${name}</span></div>
           <div class="val-id">${v.validator_id}</div>
-          <div class="val-row"><span class="val-row-label">Stake</span><span class="val-row-val">${stakeIndra} INDRA</span></div>
-          <div class="val-row"><span class="val-row-label">Status</span><span class="val-row-val ${statusClass}">● ${v.status || 'active'}</span></div>
-          <div class="val-row"><span class="val-row-label">Commission</span><span class="val-row-val">${commission}</span></div>
-          <div class="val-row"><span class="val-row-label">Epoch Joined</span><span class="val-row-val">${v.epoch_joined ?? 0}</span></div>
+          <div class="val-row"><span class="val-row-label">Self-Stake</span><span class="val-row-val">${(Number(v.stake||v.stake_spark||0)/1e8).toLocaleString(undefined,{maximumFractionDigits:0})} INDRA</span></div>
+          <div class="val-row"><span class="val-row-label">Status</span><span class="val-row-val status-active">● ${v.status}</span></div>
+          <div class="val-row"><span class="val-row-label">Commission</span><span class="val-row-val">${((v.commission_bps||0)/100).toFixed(0)}%</span></div>
+          <div class="val-row"><span class="val-row-label">Pending Rewards</span><span class="val-row-val" style="color:var(--gold)">${pendingINDRA} INDRA</span></div>
+          <div class="val-row"><span class="val-row-label">Epoch Joined</span><span class="val-row-val">${v.epoch_joined??v.registered_epoch??'—'}</span></div>
         </div>
       `;
     }).join('');
   } catch(e) {
-    document.getElementById('validators-grid').innerHTML='<div class="loading">Failed to load validators — '+e.message+'</div>';
+    document.getElementById('validators-grid').innerHTML='<div class="loading">Failed to load validators</div>';
   }
+}
+
+async function updateEpochs() {
+  try {
+    const data = await rpc('indra_getEpochHistory', []);
+    const list = document.getElementById('epoch-list');
+    if(!data.epochs || data.epochs.length === 0) {
+      list.innerHTML = '<div style="padding:2rem 1.5rem;font-family:monospace;font-size:0.6875rem;color:var(--muted);">No completed epochs yet. First epoch completes at block 300.</div>';
+      document.getElementById('ep-latest').textContent = '—';
+      document.getElementById('ep-total-rewards').textContent = '—';
+      document.getElementById('ep-total-slashed').textContent = '0 INDRA';
+      return;
+    }
+    const epochs = data.epochs;
+    document.getElementById('ep-latest').textContent = 'Epoch '+epochs[0].epoch;
+    const totalRewards = epochs.reduce((s,e)=>s+Number(e.block_rewards_distributed||0),0);
+    const totalSlashed = epochs.reduce((s,e)=>s+Number(e.total_slashed_spark||0),0);
+    document.getElementById('ep-total-rewards').textContent = spark(totalRewards);
+    document.getElementById('ep-total-slashed').textContent = totalSlashed > 0 ? spark(totalSlashed) : '0 INDRA';
+    list.innerHTML = epochs.map(e => {
+      const slashText = Number(e.total_slashed_spark||0) > 0
+        ? spark(e.total_slashed_spark)
+        : '<span style="color:var(--muted)">None</span>';
+      const ts = e.timestamp_secs ? timeAgo(e.timestamp_secs) : '—';
+      return `
+        <div class="epoch-row-item">
+          <span class="epoch-num">${e.epoch}</span>
+          <span class="epoch-heights">#${e.start_height}–${e.end_height}</span>
+          <span class="epoch-reward">${spark(e.block_rewards_distributed)}</span>
+          <span style="font-family:monospace;font-size:0.6875rem;color:var(--text);">${e.active_validators}</span>
+          <span class="epoch-ts">${ts}</span>
+        </div>
+      `;
+    }).join('');
+  } catch(e) {
+    document.getElementById('epoch-list').innerHTML = '<div class="loading" style="padding:1.5rem;">Failed to load epoch history</div>';
+  }
+}
+
+async function updateGovernance() {
+  try {
+    const [params, proposals] = await Promise.all([
+      rpc('indra_getGovernanceParams'),
+      rpc('indra_getProposals')
+    ]);
+
+    // Render governance params
+    const grid = document.getElementById('gov-params-grid');
+    const paramItems = [
+      { label: 'Standard Quorum', val: (params.governance_quorum_bps/100).toFixed(0)+'%', note: '50% of staked INDRA' },
+      { label: 'Critical Quorum', val: (params.governance_critical_quorum_bps/100).toFixed(0)+'%', note: '67% of staked INDRA' },
+      { label: 'Execution Delay', val: params.governance_delay_epochs+' epochs', note: '~'+Math.round(params.governance_delay_epochs*0.5)+'h after passing' },
+      { label: 'Proposal Deposit', val: (Number(params.proposal_deposit_spark)/1e8).toFixed(0)+' INDRA', note: 'Returned if ≥10% support' },
+      { label: 'Max Commission', val: (params.max_commission_bps/100).toFixed(0)+'%', note: 'Can only decrease' },
+      { label: 'Liveness Penalty', val: (params.slash_liveness_bps/100).toFixed(2)+'%', note: 'Per epoch missed' },
+      { label: 'Liveness Threshold', val: params.slash_liveness_threshold_epochs+' epochs', note: 'Before penalty triggers' },
+      { label: 'Double-Sign Slash', val: (params.slash_double_precommit_bps/100).toFixed(0)+'%', note: 'Slashed immediately' },
+    ];
+    grid.innerHTML = paramItems.map(p=>`
+      <div class="gov-param">
+        <div class="gov-param-label">${p.label}</div>
+        <div class="gov-param-val">${p.val}</div>
+        <div class="gov-param-note">${p.note}</div>
+      </div>
+    `).join('');
+
+    // Render proposals
+    const propList = document.getElementById('proposals-list');
+    if(!proposals.proposals || proposals.proposals.length === 0) {
+      propList.innerHTML = `
+        <div class="no-proposals">
+          <div class="no-proposals-icon">⚖️</div>
+          <div class="no-proposals-text">No proposals yet. Governance is active — submit a proposal via the CLI.</div>
+          <div style="margin-top:1rem;font-family:monospace;font-size:0.5625rem;color:var(--gold-dim);">indra-governance propose --action SetSlashLivenessBps --value 8 --title "..." --deposit-utxo &lt;id&gt;</div>
+        </div>
+      `;
+      return;
+    }
+    propList.innerHTML = proposals.proposals.map(p => {
+      const phaseClass = 'phase-'+(p.phase||'').toLowerCase().replace('_','');
+      const totalStake = Number(p.snapshot1_total_stake||0) || 1;
+      const yesPct = Math.round(Number(p.yes_stake||0)/totalStake*100);
+      const noPct = Math.round(Number(p.no_stake||0)/totalStake*100);
+      const absPct = 100-yesPct-noPct;
+      return `
+        <div class="proposal-card">
+          <div class="proposal-top">
+            <div class="proposal-title">${p.title||'Proposal #'+p.proposal_id.slice(0,8)}</div>
+            <span class="proposal-phase ${phaseClass}">${(p.phase||'').replace('_',' ')}</span>
+          </div>
+          <div class="proposal-meta">
+            Proposed epoch ${p.proposed_epoch} · ${p.tier||'Standard'} tier · Proposer: ${p.proposer_id?p.proposer_id.slice(0,12)+'...':'—'}
+          </div>
+          ${p.phase !== 'Deliberation' && p.phase !== 'Commit' ? `
+          <div class="proposal-vote-bar">
+            <div class="vote-yes" style="width:${yesPct}%"></div>
+            <div class="vote-no" style="width:${noPct}%"></div>
+            <div class="vote-abstain" style="width:${absPct}%"></div>
+          </div>
+          <div class="proposal-vote-labels">
+            <span class="vote-label-yes">YES ${yesPct}%</span>
+            <span class="vote-label-no">NO ${noPct}%</span>
+            <span class="vote-label-abs">ABSTAIN ${absPct}%</span>
+          </div>` : `<div style="font-family:monospace;font-size:0.5625rem;color:var(--muted)">Votes hidden during commit phase</div>`}
+        </div>
+      `;
+    }).join('');
+  } catch(e) {
+    document.getElementById('gov-params-grid').innerHTML = '<div class="loading" style="padding:1rem;">Failed to load governance data</div>';
+  }
+}
+
+async function updateSchemaInfo() {
+  try {
+    const info = await rpc('indra_getSchemaInfo');
+    document.getElementById('schema-ver').textContent = 'v'+info.schema_version;
+  } catch(e) {}
 }
 
 async function lookupBalance() {
@@ -777,57 +815,49 @@ async function lookupBalance() {
   const errEl = document.getElementById('lookup-err');
   const resEl = document.getElementById('lookup-result');
   errEl.textContent=''; resEl.classList.remove('show');
-  if(!addr || addr.length < 10) { errEl.textContent='Enter a valid address (64-character hex).'; return; }
+  if(!addr||addr.length<10){errEl.textContent='Enter a valid address.';return;}
   try {
     const data = await rpc('indra_getBalance',[addr]);
-    // indra_getBalance returns {address, balance_spark, utxo_count}
-    const bal = data.balance_spark ?? data.balance ?? 0;
     document.getElementById('lr-address').textContent = addr;
-    document.getElementById('lr-balance').textContent = (Number(bal)/1e8).toFixed(8)+' INDRA';
-    document.getElementById('lr-spark').textContent = Number(bal).toLocaleString()+' Spark';
+    document.getElementById('lr-balance').textContent = (Number(data.balance_spark??data.balance??0)/1e8).toFixed(8)+' INDRA';
+    document.getElementById('lr-spark').textContent = Number(data.balance_spark??data.balance??0).toLocaleString()+' Spark';
     resEl.classList.add('show');
   } catch(e) { errEl.textContent='Error: '+e.message; }
 }
 
-function setAddr(addr) {
-  document.getElementById('lookup-addr').value=addr;
-  switchTab('lookup');
-}
+function setAddr(addr) { document.getElementById('lookup-addr').value=addr; switchTab('lookup'); }
 
 function switchTab(name) {
-  document.querySelectorAll('.tab-btn').forEach((b,i)=>{
-    b.classList.toggle('active',['blocks','lookup'][i]===name);
-  });
-  document.querySelectorAll('.tab-content').forEach(c=>{
-    c.classList.toggle('active',c.id==='tab-'+name);
-  });
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{ b.classList.toggle('active',['blocks','lookup'][i]===name); });
+  document.querySelectorAll('.tab-content').forEach(c=>{ c.classList.toggle('active',c.id==='tab-'+name); });
 }
 
-function switchInstall(panel) {
-  document.querySelectorAll('.install-tab').forEach((t,i)=>{
-    t.classList.toggle('active',['validator','observer'][i]===panel);
-  });
-  document.querySelectorAll('.install-panel').forEach(p=>{
-    p.classList.toggle('active',p.id==='panel-'+panel);
-  });
-  document.getElementById('install-titlebar-label').textContent =
-    panel === 'validator' ? 'bash — indra-validator' : 'bash — indra-observer';
+function switchNodeTab(name) {
+  document.querySelectorAll('.node-tab-btn').forEach(b=>{ b.classList.toggle('active',b.textContent.toLowerCase().includes(name)); });
+  document.querySelectorAll('.node-tab-content').forEach(c=>{ c.classList.toggle('active',c.id==='nodetab-'+name); });
 }
 
-function copyInstall() {
-  const activePanel = document.querySelector('.install-panel.active');
-  const txt = activePanel ? activePanel.innerText.replace(/\n{3,}/g,'\n\n').trim() : '';
+const INSTALL_VALIDATOR = `curl -sSf https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh | bash\nindra-keygen --name yourname --output ~/.indra/data/keys.json\nindra-node --init\nindra-node --config ~/.indra/data/config.toml\nindra-stake register --keys ~/.indra/data/keys.json --commission 1000\nindra-stake self-stake --keys ~/.indra/data/keys.json --utxo <utxo_id>`;
+const INSTALL_OBSERVER = `curl -sSf https://raw.githubusercontent.com/jyothisarath096/indra/main/releases/install.sh | bash\nindra-observer --data-dir ~/.indra/observer --connect 116.203.185.28:30304 --rpc-addr 127.0.0.1:8546\ncurl -s http://127.0.0.1:8546 -d '{"jsonrpc":"2.0","method":"indra_getChainInfo","params":[],"id":1}'`;
+
+function copyInstall(type) {
+  const txt = type === 'observer' ? INSTALL_OBSERVER : INSTALL_VALIDATOR;
   navigator.clipboard.writeText(txt).then(()=>{
-    const btn=document.querySelector('.copy-btn');
-    btn.textContent='Copied!';
-    setTimeout(()=>btn.textContent='Copy',2000);
+    const btns = document.querySelectorAll('.copy-btn');
+    btns.forEach(b=>{ if(b.onclick.toString().includes(type)){ b.textContent='Copied!'; setTimeout(()=>b.textContent='Copy',2000); }});
   });
 }
 
+// Init
 updateChain();
 updateValidators();
+updateEpochs();
+updateGovernance();
+updateSchemaInfo();
 setInterval(updateChain, 6000);
 setInterval(updateValidators, 30000);
+setInterval(updateEpochs, 60000);
+setInterval(updateGovernance, 30000);
 </script>
 </body>
 </html>
